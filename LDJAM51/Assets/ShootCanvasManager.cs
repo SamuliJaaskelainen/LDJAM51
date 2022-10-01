@@ -9,10 +9,13 @@ public class ShootCanvasManager : MonoBehaviour
 
     [SerializeField] CanvasScaler mainCanvasScaler;
     [SerializeField] RectTransform gameWindow;
+    [SerializeField] RenderTexture gameRenderTexture;
 
     void Start()
     {
         mainCanvasScaler.referenceResolution = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
+        gameRenderTexture.width = Screen.currentResolution.width;
+        gameRenderTexture.height = Screen.currentResolution.height;
         UpdateBorder();
     }
 
