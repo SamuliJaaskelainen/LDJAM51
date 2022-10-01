@@ -2,13 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using ManyMouseUnity;
 
 public class ManyMouseCrosshair : MonoBehaviour
 {
-    public static int hitPoints = 3;
-
     [SerializeField] float smoothing = 1.0f;
     [SerializeField] CanvasScaler crosshairCanvas;
     [SerializeField] RectTransform graphics;
@@ -142,6 +141,18 @@ public class ManyMouseCrosshair : MonoBehaviour
             guns[bullet].Shoot(ray.origin, ray.direction);
             bullet++;
         }
+
+        if (HitPoints.hitPoints <= 0)
+        {
+            if (rectTransform.position.x > Screen.width / 2.0f)
+            {
+                SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene("Main", LoadSceneMode.Single);
+            }
+        }
     }
 
     private void OnEnable()
@@ -214,7 +225,7 @@ public class ManyMouseCrosshair : MonoBehaviour
         {
             timer = 0.0f;
             bullet = 0;
-            hitPoints = 3;
+            HitPoints.hitPoints = 3;
         }
     }
 
