@@ -69,26 +69,35 @@ public class ManyMouseCrosshair : MonoBehaviour
 
     void Shoot(int buttonId)
     {
-        Debug.Log("Shoot mouse " + mouse.ID + " button " + buttonId);
-
-        if (player1mouseId != mouse.ID && player2mouseId != mouse.ID)
+        if (useMouse)
         {
-            if (player1mouseId < 0)
+            Debug.Log("Shoot direct mouse " + " button " + buttonId);
+        }
+        else
+        {
+            Debug.Log("Shoot mouse " + mouse.ID + " button " + buttonId);
+
+            if (player1mouseId != mouse.ID && player2mouseId != mouse.ID)
             {
-                Debug.Log("P1 assigned to mouse " + mouse.ID);
-                player1mouseId = mouse.ID;
-            }
-            else if (player2mouseId < 0)
-            {
-                Debug.Log("P2 assigned to mouse " + mouse.ID);
-                player2mouseId = mouse.ID;
+                if (player1mouseId < 0)
+                {
+                    Debug.Log("P1 assigned to mouse " + mouse.ID);
+                    player1mouseId = mouse.ID;
+                }
+                else if (player2mouseId < 0)
+                {
+                    Debug.Log("P2 assigned to mouse " + mouse.ID);
+                    player2mouseId = mouse.ID;
+                }
             }
         }
 
-        if (Physics.Raycast(gameCamera.ScreenPointToRay(Input.mousePosition), out hit))
+        if (Physics.Raycast(gameCamera.ScreenPointToRay(rectTransform.anchoredPosition), out hit))
         {
             hit.transform.SendMessage("Hit");
         }
+
+        CameraShake.Instance.Shake(0.08f);
     }
 
     private void OnEnable()
@@ -146,6 +155,12 @@ public class ManyMouseCrosshair : MonoBehaviour
             //Debug.Log("Mouse x: " + Input.mousePosition.x);
 
             rectTransform.anchoredPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y - crosshairCanvas.referenceResolution.y);
+
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Shoot(0);
+            }
         }
     }
 

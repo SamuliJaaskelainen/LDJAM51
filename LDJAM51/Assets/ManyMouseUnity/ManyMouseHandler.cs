@@ -19,7 +19,6 @@ public class ManyMouseHandler : MonoBehaviour
     int player1MouseId;
     int player2MouseId;
 
-
     public List<ManyMouseCrosshair> Crosshairs { get { return crosshairs; } }
 
     void OnEnable()
@@ -67,15 +66,6 @@ public class ManyMouseHandler : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Screen.SetResolution(Screen.width, Screen.height, false);
-            }
-        }
-
-        if (useMouse)
-        {
-            Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-            {
-                hit.transform.SendMessage("Hit");
             }
         }
     }
