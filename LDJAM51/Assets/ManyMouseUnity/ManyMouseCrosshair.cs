@@ -104,11 +104,11 @@ public class ManyMouseCrosshair : MonoBehaviour
     {
         if (useMouse)
         {
-            Debug.Log(Screen.mainWindowPosition.x + " " + Screen.mainWindowPosition.y);
+            //Debug.Log(Screen.mainWindowPosition.x + " " + Screen.mainWindowPosition.y);
 
-            Debug.Log("Screen current resolution width: " + Screen.currentResolution.width);
-            Debug.Log("Rendering rendering width: " + Display.main.renderingWidth);
-            Debug.Log("Mouse x: " + Input.mousePosition.x);
+            //Debug.Log("Screen current resolution width: " + Screen.currentResolution.width);
+            //Debug.Log("Rendering rendering width: " + Display.main.renderingWidth);
+            //Debug.Log("Mouse x: " + Input.mousePosition.x);
 
             rectTransform.anchoredPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y - crosshairCanvas.referenceResolution.y);
         }

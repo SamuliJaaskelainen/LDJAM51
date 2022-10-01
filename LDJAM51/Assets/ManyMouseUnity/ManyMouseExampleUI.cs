@@ -10,6 +10,7 @@ namespace ManyMouseExample
     public class ManyMouseExampleUI : MonoBehaviour
     {
         [SerializeField] ManyMouseHandler exampleScript;
+        [SerializeField] GameObject debugUi;
         [SerializeField] Text idField;
         [SerializeField] Text nameField;
         [SerializeField] Text xField;
@@ -34,6 +35,14 @@ namespace ManyMouseExample
                 var c = exampleScript.Crosshairs[m.ID].transform as RectTransform;
                 xField.text = "X Pos: " + c.anchoredPosition.x.ToString();
                 yField.text = "Y Pos: " + c.anchoredPosition.y.ToString();
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                debugUi.SetActive(!debugUi.activeSelf);
             }
         }
     }

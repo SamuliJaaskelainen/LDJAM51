@@ -414,7 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e52916d8aac78418228da50a744ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMouse: 1
   canvas: {fileID: 1998088975}
   sceneMousePrefab: {fileID: 5052824327147330254, guid: 612dc59f611f0e547a2fe05bf66c7af2,
     type: 3}
@@ -524,10 +523,10 @@ RectTransform:
   m_Father: {fileID: 1979636088}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1838.25, y: -33.333336}
+  m_SizeDelta: {x: 1280.2297, y: 66.66667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455836555
 MonoBehaviour:
@@ -604,10 +603,10 @@ RectTransform:
   m_Father: {fileID: 1519302623}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1889.2974, y: -33.333336}
+  m_SizeDelta: {x: 3758.5947, y: 66.66667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532943388
 MonoBehaviour:
@@ -883,10 +882,10 @@ RectTransform:
   m_Father: {fileID: 1979636088}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 599.06757, y: -33.333336}
+  m_SizeDelta: {x: 1198.1351, y: 66.66667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033244150
 MonoBehaviour:
@@ -995,7 +994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1519302623
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1109,10 +1108,10 @@ RectTransform:
   m_Father: {fileID: 1519302623}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1889.2974, y: -166.66669}
+  m_SizeDelta: {x: 3758.5947, y: 66.66667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580383162
 MonoBehaviour:
@@ -1403,10 +1402,10 @@ RectTransform:
   m_Father: {fileID: 1979636088}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 3118.4795, y: -33.333336}
+  m_SizeDelta: {x: 1280.2297, y: 66.66667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961783822
 MonoBehaviour:
@@ -1485,10 +1484,10 @@ RectTransform:
   m_Father: {fileID: 1519302623}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1889.2974, y: -100.00001}
+  m_SizeDelta: {x: 3758.5947, y: 66.66667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979636089
 MonoBehaviour:
@@ -1635,6 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exampleScript: {fileID: 314547785}
+  debugUi: {fileID: 1519302622}
   idField: {fileID: 1033244150}
   nameField: {fileID: 1580383162}
   xField: {fileID: 455836555}
