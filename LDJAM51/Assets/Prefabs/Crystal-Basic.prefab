@@ -55,8 +55,7 @@ MonoBehaviour:
     zAxis: 1
     detectFloatingFragments: 0
     asynchronous: 0
-    insideMaterial: {fileID: -3033667219593020291, guid: eb2cf7c49babeb14b9ca8b06a2e48512,
-      type: 3}
+    insideMaterial: {fileID: 2100000, guid: cec90b8e85309af489cd43f1ab911b6b, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
   levelsOfRecursion: 2
@@ -150,7 +149,7 @@ Transform:
   - {fileID: 1395227973}
   - {fileID: 1478492195}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &7740340999039355163
 GameObject:

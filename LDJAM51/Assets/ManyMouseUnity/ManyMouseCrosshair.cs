@@ -7,11 +7,21 @@ using ManyMouseUnity;
 
 public class ManyMouseCrosshair : MonoBehaviour
 {
+    public static int hitPoints = 3;
+
     [SerializeField] float smoothing = 1.0f;
     [SerializeField] CanvasScaler crosshairCanvas;
     [SerializeField] RectTransform graphics;
     [SerializeField] float cursorSpeed = 10.0f;
     [SerializeField] UnityEngine.UI.Image selectionImage = null;
+
+    [SerializeField] GameObject defaultGun;
+    GameObject gun0;
+    GameObject gun1;
+    GameObject gun2;
+    GameObject gun3;
+    int bullet = 0;
+    Gun[] guns = new Gun[4];
 
     RectTransform rectTransform { get { return transform as RectTransform; } }
 
@@ -24,6 +34,8 @@ public class ManyMouseCrosshair : MonoBehaviour
 
     static int player1mouseId = -1;
     static int player2mouseId = -1;
+
+    float timer;
 
     /// <summary>
     /// A more savvy way to initialize may be to use a ManyMouse reference rather than 
@@ -65,6 +77,18 @@ public class ManyMouseCrosshair : MonoBehaviour
 
         crosshairCanvas = GameObject.Find("CrosshairCanvas").GetComponent<CanvasScaler>();
         gameCamera = Camera.main;
+
+        gun0 = Instantiate(defaultGun, transform);
+        gun1 = Instantiate(defaultGun, transform);
+        gun2 = Instantiate(defaultGun, transform);
+        gun3 = Instantiate(defaultGun, transform);
+
+        guns[0] = gun0.GetComponent<Gun>();
+        guns[1] = gun1.GetComponent<Gun>();
+        guns[2] = gun2.GetComponent<Gun>();
+        guns[3] = gun3.GetComponent<Gun>();
+
+        Debug.Log("Guns initialized");
     }
 
     void Shoot(int buttonId)
@@ -92,17 +116,38 @@ public class ManyMouseCrosshair : MonoBehaviour
             }
         }
 
-        if (Physics.Raycast(gameCamera.ScreenPointToRay(rectTransform.anchoredPosition), out hit))
+        if (bullet < guns.Length)
         {
-            hit.transform.SendMessage("Hit");
-        }
+            /*var ray = Camera.main.ScreenPointToRay(rectTransform.position);
+            if (!Physics.Raycast(ray, out var hit, 1000f))
+            {
+                return;
+            }
+            Collider[] colliders = Physics.OverlapSphere(hit.point, 1.0f);
+            foreach (var collider in colliders)
+            {
+                var fracturable = collider.GetComponent<Fracturable>();
+                if (fracturable == null)
+                {
+                    continue;
+                }
+                ImpactInfo impactInfo = new ImpactInfo();
+                impactInfo.position = hit.point;
+                impactInfo.radius = 1.0f;
+                impactInfo.impulse = ray.direction * -1.0f;
+                fracturable.CauseFracture(impactInfo);
+            }*/
 
-        CameraShake.Instance.Shake(0.08f);
+            Ray ray = gameCamera.ScreenPointToRay(rectTransform.position);
+            guns[bullet].Shoot(ray.origin, ray.direction);
+            bullet++;
+        }
     }
 
     private void OnEnable()
     {
         ManyMouse.OnAnyMouseUpdated += HighlightLastUpdated;
+        timer = 0.0f;
     }
 
     private void OnDisable()
@@ -162,10 +207,19 @@ public class ManyMouseCrosshair : MonoBehaviour
                 Shoot(0);
             }
         }
+
+
+        timer += Time.deltaTime;
+        if (timer >= 10.0f)
+        {
+            timer = 0.0f;
+            bullet = 0;
+            hitPoints = 3;
+        }
     }
 
     public Vector2 GetScreenPosition()
     {
-        return rectTransform.anchoredPosition;
+        return rectTransform.position;
     }
 }

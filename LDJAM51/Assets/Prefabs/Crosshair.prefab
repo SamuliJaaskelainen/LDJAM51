@@ -64,6 +64,8 @@ MonoBehaviour:
   graphics: {fileID: 3949477696096568799}
   cursorSpeed: 1
   selectionImage: {fileID: 1502873688641058794}
+  defaultGun: {fileID: 308059798029136612, guid: 9e6b4a1259acdd84daf8e86f69245027,
+    type: 3}
 --- !u!1 &6397502713985466502
 GameObject:
   m_ObjectHideFlags: 0
