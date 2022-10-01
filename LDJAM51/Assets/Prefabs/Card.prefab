@@ -283,9 +283,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2332795147748322965}
   - component: {fileID: 6738598769502866585}
+  - component: {fileID: 3506284845513649808}
   m_Layer: 0
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,3 +329,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00769768, y: 0.020670818, z: 0.036269475}
   m_Center: {x: 0.004158379, y: -0.0000000037252894, z: 1.1271248e-22}
+--- !u!114 &3506284845513649808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104124182321656879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf990bd78dee9b4aa76a70a5a24ae30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: 
+  functionParam: 

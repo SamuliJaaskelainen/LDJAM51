@@ -8,6 +8,8 @@ using ManyMouseUnity;
 
 public class ManyMouseCrosshair : MonoBehaviour
 {
+    public static int playerCount;
+
     [SerializeField] float smoothing = 1.0f;
     [SerializeField] CanvasScaler crosshairCanvas;
     [SerializeField] RectTransform graphics;
@@ -45,6 +47,7 @@ public class ManyMouseCrosshair : MonoBehaviour
     {
         this.useMouse = useMouse;
 
+        playerCount = 1;
         player1mouseId = -1;
         player2mouseId = -1;
 
@@ -86,6 +89,10 @@ public class ManyMouseCrosshair : MonoBehaviour
         guns[1] = gun1.GetComponent<Gun>();
         guns[2] = gun2.GetComponent<Gun>();
         guns[3] = gun3.GetComponent<Gun>();
+        guns[0].ownerId = id;
+        guns[1].ownerId = id;
+        guns[2].ownerId = id;
+        guns[3].ownerId = id;
 
         Debug.Log("Guns initialized");
     }
@@ -111,32 +118,13 @@ public class ManyMouseCrosshair : MonoBehaviour
                 {
                     Debug.Log("P2 assigned to mouse " + mouse.ID);
                     player2mouseId = mouse.ID;
+                    playerCount = 2;
                 }
             }
         }
 
         if (bullet < guns.Length)
         {
-            /*var ray = Camera.main.ScreenPointToRay(rectTransform.position);
-            if (!Physics.Raycast(ray, out var hit, 1000f))
-            {
-                return;
-            }
-            Collider[] colliders = Physics.OverlapSphere(hit.point, 1.0f);
-            foreach (var collider in colliders)
-            {
-                var fracturable = collider.GetComponent<Fracturable>();
-                if (fracturable == null)
-                {
-                    continue;
-                }
-                ImpactInfo impactInfo = new ImpactInfo();
-                impactInfo.position = hit.point;
-                impactInfo.radius = 1.0f;
-                impactInfo.impulse = ray.direction * -1.0f;
-                fracturable.CauseFracture(impactInfo);
-            }*/
-
             Ray ray = gameCamera.ScreenPointToRay(new Vector2(rectTransform.anchoredPosition.x, Screen.currentResolution.height + rectTransform.anchoredPosition.y));
             guns[bullet].Shoot(ray.origin, ray.direction);
             bullet++;

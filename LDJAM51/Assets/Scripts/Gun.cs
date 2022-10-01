@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Bullet[] bullets;
     [SerializeField] Vector3[] bulletOffsets;
     [SerializeField] float shake = 0.08f;
+    public int ownerId;
 
     public void Shoot(Vector3 position, Vector3 forward)
     {
@@ -16,7 +17,7 @@ public class Gun : MonoBehaviour
             Bullet bullet = Instantiate(bullets[i], null);
             bullet.transform.position = position;
             bullet.transform.forward = forward;
-            bullet.Init();
+            bullet.Init(ownerId);
         }
 
         CameraShake.Instance.Shake(shake);

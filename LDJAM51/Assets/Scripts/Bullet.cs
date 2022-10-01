@@ -8,10 +8,11 @@ public class Bullet : MonoBehaviour
     public float radius = 0.4f;
     public float impulse = -0.5f;
     protected RaycastHit hit;
+    protected int shooterId;
 
-    public void Init()
+    public void Init(int id)
     {
-
+        shooterId = id;
     }
 
     void Update()
@@ -21,6 +22,12 @@ public class Bullet : MonoBehaviour
         if (Physics.Linecast(transform.position, nextPosition, out hit))
         {
             Debug.Log("Bullet hit: " + hit.transform.name, gameObject);
+
+            if (hit.transform.tag == "Button")
+            {
+                hit.transform.SendMessage("Press");
+            }
+
             Collider[] colliders = Physics.OverlapSphere(hit.point, radius);
             foreach (var collider in colliders)
             {
