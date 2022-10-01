@@ -11,8 +11,13 @@ public class ManyMouseHandler : MonoBehaviour
     public static bool showCrosshair = true;
     [SerializeField] Canvas canvas;
     [SerializeField] GameObject sceneMousePrefab;
+    [SerializeField] Camera gameCamera;
+    RaycastHit hit;
 
-    List<ManyMouseCrosshair> crosshairs;
+    List<ManyMouseCrosshair> crosshairs = new List<ManyMouseCrosshair>();
+    Dictionary<int, int> playerMouseIds = new Dictionary<int, int>();
+    int player1MouseId;
+    int player2MouseId;
 
 
     public List<ManyMouseCrosshair> Crosshairs { get { return crosshairs; } }
@@ -63,6 +68,26 @@ public class ManyMouseHandler : MonoBehaviour
                 Cursor.visible = true;
                 Screen.SetResolution(Screen.width, Screen.height, false);
             }
+        }
+
+        if (useMouse)
+        {
+            Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                hit.transform.SendMessage("Hit");
+            }
+        }
+    }
+
+    void Shoot(int crosshairId)
+    {
+        Debug.Log("Firing on crosshair: " + crosshairId);
+
+        Ray ray = gameCamera.ScreenPointToRay(crosshairs[crosshairId].GetScreenPosition());
+        if (Physics.Raycast(ray, out hit))
+        {
+            hit.transform.SendMessage("Hit");
         }
     }
 

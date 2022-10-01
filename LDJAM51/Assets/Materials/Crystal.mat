@@ -124,6 +124,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_f221e2b23f0b48a5b1206ddacd068c9e_Out_0:
+        m_Texture: {fileID: 2800000, guid: 5c28b38c230bf3e46b84cce9f7e526b9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Triplanar_1bcc777e5cb547a893a934f43a96200d_Texture_1:
         m_Texture: {fileID: 2800000, guid: 5c28b38c230bf3e46b84cce9f7e526b9, type: 3}
         m_Scale: {x: 1, y: 1}

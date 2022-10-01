@@ -176,7 +176,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 73.8
+  m_Intensity: 99
   m_Range: 63.4
   m_SpotAngle: 70.85937
   m_InnerSpotAngle: 21.80208
@@ -233,14 +233,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7204694}
-  m_LocalRotation: {x: 0.7731726, y: -0.22632928, z: -0.16643782, w: 0.5685751}
-  m_LocalPosition: {x: 6.76, y: 12.63, z: 14.83}
+  m_LocalRotation: {x: 0.51412416, y: -0.15049855, z: -0.23722708, w: 0.8104011}
+  m_LocalPosition: {x: 7.04, y: 13.07, z: 3.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 53.502, y: -120.071, z: -114.96}
+  m_LocalEulerAnglesHint: {x: 49.631, y: -48.869, z: -56.361}
 --- !u!1 &44490840
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +640,7 @@ MonoBehaviour:
   canvas: {fileID: 1998088975}
   sceneMousePrefab: {fileID: 5052824327147330254, guid: 612dc59f611f0e547a2fe05bf66c7af2,
     type: 3}
+  gameCamera: {fileID: 1891204420}
 --- !u!1 &450051930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,7 +1970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891204416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2387,7 +2388,7 @@ PrefabInstance:
     - target: {fileID: 7628821459913212046, guid: c82cf452357c6ed49a00d6e6962bd6dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -0.714
       objectReference: {fileID: 0}
     - target: {fileID: 7628821459913212046, guid: c82cf452357c6ed49a00d6e6962bd6dc,
         type: 3}

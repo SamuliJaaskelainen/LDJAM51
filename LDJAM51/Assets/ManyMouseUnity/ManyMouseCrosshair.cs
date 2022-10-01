@@ -19,6 +19,11 @@ public class ManyMouseCrosshair : MonoBehaviour
     ManyMouse mouse;
     Vector2 realPosition;
     bool useMouse;
+    Camera gameCamera;
+    RaycastHit hit;
+
+    static int player1mouseId = -1;
+    static int player2mouseId = -1;
 
     /// <summary>
     /// A more savvy way to initialize may be to use a ManyMouse reference rather than 
@@ -29,6 +34,9 @@ public class ManyMouseCrosshair : MonoBehaviour
     {
         this.useMouse = useMouse;
 
+        player1mouseId = -1;
+        player2mouseId = -1;
+
         if (!useMouse)
         {
             if (ManyMouseWrapper.MouseCount > id)
@@ -38,6 +46,7 @@ public class ManyMouseCrosshair : MonoBehaviour
                 {
                     //mouse.OnMouseDeltaChanged -= UpdateDelta;
                     mouse.OnMousePositionChanged -= UpdatePosition;
+                    mouse.OnMouseButtonDown -= Shoot;
                 }
 
                 mouse = ManyMouseWrapper.GetMouseByID(id);
@@ -45,6 +54,7 @@ public class ManyMouseCrosshair : MonoBehaviour
 
                 //mouse.OnMouseDeltaChanged += UpdateDelta;
                 mouse.OnMousePositionChanged += UpdatePosition;
+                mouse.OnMouseButtonDown += Shoot;
             }
             else
             {
@@ -54,6 +64,31 @@ public class ManyMouseCrosshair : MonoBehaviour
         }
 
         crosshairCanvas = GameObject.Find("CrosshairCanvas").GetComponent<CanvasScaler>();
+        gameCamera = Camera.main;
+    }
+
+    void Shoot(int buttonId)
+    {
+        Debug.Log("Shoot mouse " + mouse.ID + " button " + buttonId);
+
+        if (player1mouseId != mouse.ID && player2mouseId != mouse.ID)
+        {
+            if (player1mouseId < 0)
+            {
+                Debug.Log("P1 assigned to mouse " + mouse.ID);
+                player1mouseId = mouse.ID;
+            }
+            else if (player2mouseId < 0)
+            {
+                Debug.Log("P2 assigned to mouse " + mouse.ID);
+                player2mouseId = mouse.ID;
+            }
+        }
+
+        if (Physics.Raycast(gameCamera.ScreenPointToRay(Input.mousePosition), out hit))
+        {
+            hit.transform.SendMessage("Hit");
+        }
     }
 
     private void OnEnable()
@@ -112,5 +147,10 @@ public class ManyMouseCrosshair : MonoBehaviour
 
             rectTransform.anchoredPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y - crosshairCanvas.referenceResolution.y);
         }
+    }
+
+    public Vector2 GetScreenPosition()
+    {
+        return rectTransform.anchoredPosition;
     }
 }
