@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
 
         if (Physics.Linecast(transform.position, nextPosition, out hit))
         {
-            Debug.Log("Bullet hit: " + hit.transform.name);
+            Debug.Log("Bullet hit: " + hit.transform.name, gameObject);
             Collider[] colliders = Physics.OverlapSphere(hit.point, radius);
             foreach (var collider in colliders)
             {

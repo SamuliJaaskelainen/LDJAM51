@@ -137,7 +137,7 @@ public class ManyMouseCrosshair : MonoBehaviour
                 fracturable.CauseFracture(impactInfo);
             }*/
 
-            Ray ray = gameCamera.ScreenPointToRay(rectTransform.position);
+            Ray ray = gameCamera.ScreenPointToRay(new Vector2(rectTransform.anchoredPosition.x, Screen.currentResolution.height + rectTransform.anchoredPosition.y));
             guns[bullet].Shoot(ray.origin, ray.direction);
             bullet++;
         }

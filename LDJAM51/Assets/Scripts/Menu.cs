@@ -29,7 +29,6 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
-
     void UpdateTexts()
     {
         crosshairText.text = "Crosshair: " + (ManyMouseHandler.showCrosshair ? "ON" : "OFF");
