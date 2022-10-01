@@ -17,6 +17,14 @@ public class FracturableRoot : MonoBehaviour
         var fracturable = gameObject.GetComponentInChildren<Fracturable>();
         startingMass = fracturable.GetComponent<Rigidbody>().mass;
         fracturable.root = this;
+
+        if (physicsFragmentRoot == null) {
+            physicsFragmentRoot = transform.parent.Find("PhysicsFragments");
+        }
+        if (physicsFragmentRoot == null) {
+            physicsFragmentRoot = new GameObject("PhysicsFragments").transform;
+            physicsFragmentRoot.parent = transform;
+        }
     }
 
     public float GetHealth()
