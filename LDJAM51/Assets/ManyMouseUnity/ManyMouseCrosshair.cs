@@ -133,6 +133,21 @@ public class ManyMouseCrosshair : MonoBehaviour
             Debug.Log("Shoot with " + guns[bullet].name);
             Ray ray = gameCamera.ScreenPointToRay(new Vector2(rectTransform.anchoredPosition.x, Screen.currentResolution.height + rectTransform.anchoredPosition.y));
             guns[bullet].Shoot(ray.origin, ray.direction);
+            if (useMouse)
+            {
+                ShootCanvasManager.Instance.SetGunActive(1, bullet, false);
+            }
+            else
+            {
+                if (mouse.ID == player1mouseId)
+                {
+                    ShootCanvasManager.Instance.SetGunActive(1, bullet, false);
+                }
+                else
+                {
+                    ShootCanvasManager.Instance.SetGunActive(2, bullet, false);
+                }
+            }
             bullet++;
         }
 
@@ -220,6 +235,25 @@ public class ManyMouseCrosshair : MonoBehaviour
             bullet = 0;
             HitPoints.hitPoints = 3;
             ShootCanvasManager.Instance.SetHP(HitPoints.hitPoints);
+
+            for (int i = 0; i < guns.Length; ++i)
+            {
+                if (useMouse)
+                {
+                    ShootCanvasManager.Instance.SetGunActive(1, i, true);
+                }
+                else
+                {
+                    if (mouse.ID == player1mouseId)
+                    {
+                        ShootCanvasManager.Instance.SetGunActive(1, i, false);
+                    }
+                    else
+                    {
+                        ShootCanvasManager.Instance.SetGunActive(2, i, false);
+                    }
+                }
+            }
         }
         ShootCanvasManager.Instance.SetTimerArrow(timer / 10.0f);
     }

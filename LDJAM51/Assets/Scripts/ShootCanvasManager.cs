@@ -72,6 +72,18 @@ public class ShootCanvasManager : MonoBehaviour
         }
     }
 
+    public void SetGunActive(int player, int gunSlot, bool active)
+    {
+        if (player == 1)
+        {
+            p1guns[gunSlot].gameObject.SetActive(active);
+        }
+        else
+        {
+            p2guns[gunSlot].gameObject.SetActive(active);
+        }
+    }
+
     public void SetHP(int hp)
     {
         hearts[0].SetActive(hp >= 3);
