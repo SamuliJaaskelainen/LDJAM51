@@ -13,9 +13,9 @@ public class ShootCanvasManager : MonoBehaviour
 
     void Start()
     {
-        mainCanvasScaler.referenceResolution = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
-        gameRenderTexture.width = Screen.currentResolution.width;
-        gameRenderTexture.height = Screen.currentResolution.height;
+        mainCanvasScaler.referenceResolution = new Vector2(Screen.width, Screen.height);
+        gameRenderTexture.width = Screen.width;
+        gameRenderTexture.height = Screen.height;
         UpdateBorder();
     }
 

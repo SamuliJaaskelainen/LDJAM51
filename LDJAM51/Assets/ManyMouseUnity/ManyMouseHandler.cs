@@ -72,7 +72,7 @@ public class ManyMouseHandler : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                Screen.SetResolution(Screen.width, Screen.height, false);
+                Screen.SetResolution(Screen.width, Screen.height, useMouse ? Screen.fullScreen : false);
             }
         }
     }
@@ -81,7 +81,7 @@ public class ManyMouseHandler : MonoBehaviour
     {
         Cursor.lockState = useMouse ? CursorLockMode.Confined : CursorLockMode.Locked;
         Cursor.visible = false;
-        Screen.SetResolution(Screen.width, Screen.height, true);
+        Screen.SetResolution(Screen.width, Screen.height, useMouse ? Screen.fullScreen : true);
     }
 
     void InitializeCrosshairs()
