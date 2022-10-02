@@ -29,8 +29,7 @@ public class ShootCanvasManager : MonoBehaviour
     void Start()
     {
         mainCanvasScaler.referenceResolution = new Vector2(Screen.width, Screen.height);
-        gameRenderTexture.width = Screen.width;
-        gameRenderTexture.height = Screen.height;
+        gameRenderTexture = new RenderTexture(Screen.width, Screen.height, 32);
         UpdateBorder();
     }
 
@@ -50,12 +49,12 @@ public class ShootCanvasManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.PageUp))
         {
-            borderPixelSize += 10.0f * Time.deltaTime;
+            borderPixelSize += 10.0f * Time.unscaledDeltaTime;
             UpdateBorder();
         }
         else if (Input.GetKey(KeyCode.PageDown))
         {
-            borderPixelSize -= 10.0f * Time.deltaTime;
+            borderPixelSize -= 10.0f * Time.unscaledDeltaTime;
             UpdateBorder();
         }
     }

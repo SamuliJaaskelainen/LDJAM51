@@ -185,7 +185,7 @@ public class ManyMouseCrosshair : MonoBehaviour
         float x = Mathf.Clamp(mouse.Position.x * Screen.currentResolution.width, 0, Screen.currentResolution.width);
         float y = Mathf.Clamp(mouse.Position.y * Screen.currentResolution.height, -Screen.currentResolution.height, 0);
         realPosition = new Vector2(x, y);
-        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, realPosition, Time.smoothDeltaTime * smoothing);
+        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, realPosition, Time.unscaledDeltaTime * smoothing);
     }
 
     /// <summary>
@@ -197,7 +197,7 @@ public class ManyMouseCrosshair : MonoBehaviour
     /// <param name="Delta"></param>
     private void UpdateDelta(Vector2 Delta)
     {
-        Vector2 delta = mouse.Delta * cursorSpeed * Time.deltaTime;
+        Vector2 delta = mouse.Delta * cursorSpeed * Time.unscaledDeltaTime;
         rectTransform.anchoredPosition += delta;
         rectTransform.anchoredPosition = new Vector2(Mathf.Clamp(rectTransform.anchoredPosition.x, 0, Screen.currentResolution.width), Mathf.Clamp(rectTransform.anchoredPosition.y, -Screen.currentResolution.height, 0));
 
