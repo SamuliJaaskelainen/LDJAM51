@@ -6,6 +6,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class RoomManager : MonoBehaviour {
+    public  bool         debug = false;
     public  GameObject[] roomGameObjects;
     public  int          roomsUntilMaxDifficulty = 10;
     private Room[]       rooms;
@@ -49,9 +50,9 @@ public class RoomManager : MonoBehaviour {
 
     private Room SpawnRoom(Vector3 startPosition, Quaternion startRotation) {
         float randomWeight = Random.Range(0.0f, cumulativeRoomWeights[cumulativeRoomWeights.Length - 1]);
-        Room room = rooms[0];
-        for (int i = 1; i < rooms.Length; ++i) {
-            if(randomWeight >= cumulativeRoomWeights[i - 1]) {
+        Room room = rooms[cumulativeRoomWeights.Length - 1];
+        for (int i = 0; i < rooms.Length - 1; ++i) {
+            if(randomWeight < cumulativeRoomWeights[i]) {
                 room = rooms[i];
                 break;
             }

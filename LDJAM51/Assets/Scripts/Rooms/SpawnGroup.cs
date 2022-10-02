@@ -63,7 +63,7 @@ public class SpawnGroup : MonoBehaviour {
             int index = Random.Range(0, spawnables.Count);
             GameObject spawn = spawnables[index].gameObject;
             spawn.SetActive(true);
-            Debug.LogFormat("Activated {0}", spawn.name);
+            // Debug.LogFormat("Activated {0}", spawn.name);
             Spawn(spawn.transform, difficulty0to1);
             pointLeft -= spawnables[index].points;
             spawnables.RemoveAt(index);
