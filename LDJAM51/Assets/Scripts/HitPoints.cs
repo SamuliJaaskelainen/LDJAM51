@@ -12,7 +12,12 @@ public class HitPoints : MonoBehaviour
     public void Awake()
     {
         Instance = this;
+    }
+
+    void Start()
+    {
         hitPoints = 3;
+        ShootCanvasManager.Instance.SetHP(hitPoints);
         Time.timeScale = 1.0f;
     }
 
@@ -21,8 +26,9 @@ public class HitPoints : MonoBehaviour
         if (!gameOver.activeSelf)
         {
             hitPoints--;
+            ShootCanvasManager.Instance.SetHP(hitPoints);
             Debug.LogFormat("Took damage, hp left: {0}", hitPoints);
-            
+
             CameraShake.Instance.Shake(0.15f);
 
             if (hitPoints <= 0)

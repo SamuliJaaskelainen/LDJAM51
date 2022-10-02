@@ -123,6 +123,7 @@ public class ManyMouseCrosshair : MonoBehaviour
                     Debug.Log("P2 assigned to mouse " + mouse.ID);
                     player2mouseId = mouse.ID;
                     playerCount = 2;
+                    ShootCanvasManager.Instance.SetPlayerTwo(true);
                 }
             }
         }
@@ -218,7 +219,9 @@ public class ManyMouseCrosshair : MonoBehaviour
             timer = 0.0f;
             bullet = 0;
             HitPoints.hitPoints = 3;
+            ShootCanvasManager.Instance.SetHP(HitPoints.hitPoints);
         }
+        ShootCanvasManager.Instance.SetTimerArrow(timer / 10.0f);
     }
 
     public void ChangeGun(int gunId, GameObject newGun)
@@ -246,6 +249,22 @@ public class ManyMouseCrosshair : MonoBehaviour
         oldGun = Instantiate(newGun, transform);
         oldGun.name = oldGun.name.Replace("(Clone)", "");
         guns[gunId] = oldGun.GetComponent<Gun>();
+
+        if (useMouse)
+        {
+            ShootCanvasManager.Instance.SetGun(1, gunId, guns[gunId].shotMesh);
+        }
+        else
+        {
+            if (mouse.ID == player1mouseId)
+            {
+                ShootCanvasManager.Instance.SetGun(1, gunId, guns[gunId].shotMesh);
+            }
+            else
+            {
+                ShootCanvasManager.Instance.SetGun(2, gunId, guns[gunId].shotMesh);
+            }
+        }
 
         if (useMouse)
         {
