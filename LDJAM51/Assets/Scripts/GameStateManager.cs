@@ -20,6 +20,9 @@ public class GameStateManager : MonoBehaviour
         {
             OpenShop();
         }
+        if (Input.GetKeyDown(KeyCode.C)) {
+            CloseShop();
+        }
     }
 
     public void OpenShop()
