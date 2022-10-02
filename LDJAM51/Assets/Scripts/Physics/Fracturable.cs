@@ -15,6 +15,7 @@ public class Fracturable : MonoBehaviour {
     public  bool              debug             = false;
     [HideInInspector] public  FracturableRoot   root;
     private int               recursionLevel;
+    [HideInInspector] public  float   mass;
 
     public void CauseFracture(ImpactInfo impactInfo) {
         Debug.Assert(root != null);
@@ -83,7 +84,7 @@ public class Fracturable : MonoBehaviour {
             fragmentRigidBody.angularDrag      = thisRigidBody.angularDrag;
             fragmentRigidBody.useGravity       = thisRigidBody.useGravity;
             fragmentRigidBody.isKinematic      = thisRigidBody.isKinematic;
-            fragmentRigidBody.solverIterations = 1;
+            // fragmentRigidBody.solverIterations = 1;
         }
 
         CopyFractureComponent(obj);
@@ -95,7 +96,12 @@ public class Fracturable : MonoBehaviour {
         if (rigidbody == null) {
             rigidbody = this.AddComponent<Rigidbody>();
         }
+        var meshCollider = GetComponent<MeshCollider>();
+        if (meshCollider) {
+            meshCollider.convex = true;
+        }
         rigidbody.isKinematic = false;
+        rigidbody.mass        = this.mass;
         rigidbody.AddForce(impulse, ForceMode.Impulse);
         transform.SetParent(root.physicsFragmentRoot, true);
         root.ChildBecamePhysicsFragment(rigidbody);
@@ -110,7 +116,7 @@ public class Fracturable : MonoBehaviour {
         fragmentRoot.transform.rotation   = transform.rotation;
         fragmentRoot.transform.localScale = Vector3.one;
         var fragmentTemplate = CreateFragmentTemplate();
-        Fragmenter.Fracture(
+        Fragmenter2.Fracture(
             gameObject,
             root.fractureOptions,
             fragmentTemplate,
@@ -154,12 +160,8 @@ public class Fracturable : MonoBehaviour {
         var   closestPointOnBounds = fragmentCollider.ClosestPointOnBounds(point);
         float distanceOnBounds     = Vector3.Distance(closestPointOnBounds, point);
 
-        if (distanceOnBounds > radius) {
-            // return;
-        }
-
-        var   closestPoint = fragmentCollider.ClosestPoint(point);
-        float distance     = Vector3.Distance(closestPoint, point);
+        // var   closestPoint = fragmentCollider.ClosestPoint(point);
+        // float distance     = Vector3.Distance(closestPoint, point);
 
         // Debug.LogFormat("Recursion {0} Distance: {1}", recursionLevel, distance);
         if (distanceOnBounds > radius) { // distance may not be accurate, collider out of date??

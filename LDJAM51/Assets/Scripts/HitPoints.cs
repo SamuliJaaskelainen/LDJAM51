@@ -21,6 +21,8 @@ public class HitPoints : MonoBehaviour
         if (!gameOver.activeSelf)
         {
             hitPoints--;
+            Debug.LogFormat("Took damage, hp left: {0}", hitPoints);
+            
             CameraShake.Instance.Shake(0.15f);
 
             if (hitPoints <= 0)
