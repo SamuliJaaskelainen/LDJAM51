@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3644954997285054098}
   - component: {fileID: 284437290090122002}
   - component: {fileID: 3771754552550595851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fracturable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cafd1686a2687b4cb68e27cb190c6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeAlive: 0
 --- !u!54 &3771754552550595851
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3009721174963279885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EyeDude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2353414649237907814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhysicsFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +190,7 @@ GameObject:
   - component: {fileID: 8493472946209035257}
   - component: {fileID: 1861392750017130187}
   - component: {fileID: 6492460740545858173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FracturableEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   root: {fileID: 0}
+  mass: 0
 --- !u!64 &6492460740545858173
 MeshCollider:
   m_ObjectHideFlags: 0

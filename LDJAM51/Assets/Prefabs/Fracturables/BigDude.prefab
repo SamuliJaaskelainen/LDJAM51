@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3922592792813456969}
   - component: {fileID: 9133370327467403160}
   - component: {fileID: 4496834209083906045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fracturable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cafd1686a2687b4cb68e27cb190c6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeAlive: 0
 --- !u!54 &4496834209083906045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3260060122968944854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BigDude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2617611975983890877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhysicsFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +190,7 @@ GameObject:
   - component: {fileID: 8152714593311701794}
   - component: {fileID: 2102720084472530448}
   - component: {fileID: 6837441406973600422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FracturableBigdude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   root: {fileID: 0}
+  mass: 0
 --- !u!64 &6837441406973600422
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2279669059227313622}
   - component: {fileID: 8334224001381259492}
   - component: {fileID: 3486974613105720402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FracturablePupu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5392181413122006857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhysicsFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083234642086057402}
   - component: {fileID: 6859192440457512401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bd5ee7ee2be4a4ab12c7227d5b3d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 308059798029136612, guid: 167f01f1b16bdcf4ab73c705f37a1a25, type: 3}
+  bulletPrefab: {fileID: 308059798029136612, guid: 167f01f1b16bdcf4ab73c705f37a1a25,
+    type: 3}
+  shootDelay: 5
+  warningTime: 3
+  flashTime: 0.5
+  flashRangeMultipier: 3
 --- !u!1 &5256439157873931416
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4880018794345868834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pupu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +249,7 @@ GameObject:
   - component: {fileID: 6406538732122050749}
   - component: {fileID: 5618485607529896860}
   - component: {fileID: 7939334422912275098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fracturable
   m_TagString: Untagged
   m_Icon: {fileID: 0}

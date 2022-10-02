@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4733291706709897276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhysicsFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1497417437616163491}
   - component: {fileID: 8704889929252632465}
   - component: {fileID: 4251643480450765607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FracturablePillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   root: {fileID: 0}
+  mass: 0
 --- !u!64 &4251643480450765607
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5250538469449531735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar-Double
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +199,7 @@ GameObject:
   - component: {fileID: 6020326298781335496}
   - component: {fileID: 5715955598448897187}
   - component: {fileID: 4194696920435772411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fracturable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cafd1686a2687b4cb68e27cb190c6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeAlive: 0
 --- !u!54 &4194696920435772411
 Rigidbody:
   m_ObjectHideFlags: 0

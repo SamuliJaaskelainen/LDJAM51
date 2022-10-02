@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3700715551720775331}
   - component: {fileID: 8856227686634746932}
   - component: {fileID: 6289227476034434618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fracturable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cafd1686a2687b4cb68e27cb190c6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeAlive: 0
 --- !u!54 &6289227476034434618
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2885192297124274236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar-Pylyvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2407152330192965975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhysicsFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +190,7 @@ GameObject:
   - component: {fileID: 8363200764818975688}
   - component: {fileID: 1736718979841611514}
   - component: {fileID: 6617816214901535308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FracturablePylyvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   root: {fileID: 0}
+  mass: 0
 --- !u!64 &6617816214901535308
 MeshCollider:
   m_ObjectHideFlags: 0

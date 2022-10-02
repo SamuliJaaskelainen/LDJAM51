@@ -16,6 +16,12 @@ public class EnemyBullet : MonoBehaviour {
         
         Transform  target    = HitPoints.Instance.transform;
         Vector3    direction = target.position - transform.position;
+
+        // No shooting in back
+        if (Vector3.Dot(direction, target.forward) > 0) {
+            Destroy(gameObject);
+        }
+        
         Vector3    delta     = speed * Time.deltaTime * direction.normalized;
         RaycastHit hit;
         if (Physics.SphereCast(transform.position, radius, delta, out hit, delta.magnitude)) {
