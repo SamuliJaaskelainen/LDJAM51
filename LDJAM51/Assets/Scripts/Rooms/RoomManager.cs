@@ -55,7 +55,7 @@ public class RoomManager : MonoBehaviour {
     public                                           int            roomsBetweenShops         = 2;
     public                                           int            roomsBetweenShopsIncrease = 1;
     public                                           int            maxRoomsBetweenShops      = 6;
-    private                                          Room           currentRoom;
+    public                                          Room           currentRoom {get; private set;}
     private                                          Room           nextRoom;
     private                                          float          difficulty = 0.0f;
     private                                          RoomCollection normalRoomCollection;
