@@ -137,7 +137,7 @@ public class ManyMouseCrosshair : MonoBehaviour
 
         if (HitPoints.hitPoints <= 0)
         {
-            if (rectTransform.position.x > Screen.width / 2.0f)
+            if (rectTransform.anchoredPosition.x > Screen.width / 2.0f)
             {
                 SceneManager.LoadScene("Menu", LoadSceneMode.Single);
             }

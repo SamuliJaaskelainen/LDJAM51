@@ -72,8 +72,7 @@ public class Shop : MonoBehaviour
 
         if (p1skip && p2skip)
         {
-            gameObject.SetActive(false);
-            // TODO: Continue camera run
+            GameStateManager.Instance.CloseShop();
         }
     }
 

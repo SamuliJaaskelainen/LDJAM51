@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour
     {
         crosshairText.text = "Crosshair: " + (ManyMouseHandler.showCrosshair ? "ON" : "OFF");
         useGunText.text = "Use light gun: " + (ManyMouseHandler.useMouse ? "OFF" : "ON");
-        borderValueText.text = ((int)ShootCanvasManager.borderPixelSize).ToString();
+        borderValueText.text = ((int)ShootCanvasManager.borderPixelSize).ToString() + " pixels";
     }
 
     public void SetCrosshair()

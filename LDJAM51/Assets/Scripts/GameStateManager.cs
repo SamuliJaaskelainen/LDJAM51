@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    public static GameStateManager Instance;
+
     public GameObject shop;
+    public GameObject level;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            shop.SetActive(true);
+            OpenShop();
         }
+    }
+
+    public void OpenShop()
+    {
+        shop.SetActive(true);
+        level.SetActive(false);
+    }
+
+    public void CloseShop()
+    {
+        shop.SetActive(false);
+        level.SetActive(true);
     }
 }
