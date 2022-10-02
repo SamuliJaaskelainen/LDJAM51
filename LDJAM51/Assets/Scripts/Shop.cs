@@ -129,6 +129,11 @@ public class Shop : MonoBehaviour
             {
                 p2Shop.SetActive(false);
                 p2Slots.SetActive(true);
+                for (int i = 0; i < p1slots.Count; ++i)
+                {
+                    p2slots[i].gunMesh.mesh = crosshair.GetGun(i).shotMesh;
+                    p2slots[i].gunName.text = crosshair.GetGun(i).name;
+                }
             }
         }
     }
