@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     public void Init(int id)
     {
         shooterId = id;
-        Destroy(gameObject, 10.0f);
+        Destroy(gameObject, 3.0f);
     }
 
     public virtual void Update()
