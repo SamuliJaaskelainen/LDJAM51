@@ -192,4 +192,21 @@ public class Fracturable : MonoBehaviour {
         }
         return copy;
     }
+
+    public static void CauseFractures(Vector3 point, float radius, Vector3 impulse) {
+        Collider[] colliders = Physics.OverlapSphere(point, radius);
+        foreach (var collider in colliders)
+        {
+            var fracturable = collider.GetComponent<Fracturable>();
+            if (fracturable == null)
+            {
+                continue;
+            }
+            ImpactInfo impactInfo = new ImpactInfo();
+            impactInfo.position = point;
+            impactInfo.radius   = radius;
+            impactInfo.impulse  = impulse;
+            fracturable.CauseFracture(impactInfo);
+        }
+    }
 }

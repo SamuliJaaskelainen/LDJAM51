@@ -20,20 +20,7 @@ public class ClickToFracture : MonoBehaviour
             {
                 return;
             }
-            Collider[] colliders = Physics.OverlapSphere(hit.point, radius);
-            foreach (var collider in colliders)
-            {
-                var fracturable = collider.GetComponent<Fracturable>();
-                if (fracturable == null)
-                {
-                    continue;
-                }
-                ImpactInfo impactInfo = new ImpactInfo();
-                impactInfo.position = hit.point;
-                impactInfo.radius = radius;
-                impactInfo.impulse = ray.direction * impulse;
-                fracturable.CauseFracture(impactInfo);
-            }
+            Fracturable.CauseFractures(hit.point, radius, ray.direction * impulse);
         }
     }
 }

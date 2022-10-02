@@ -12,7 +12,7 @@ public class DamageOnContact : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (timeAlive < 1.0f) {
+        if (timeAlive < 0.1f) {
             // Prevent wonkiness with spawn as player may not be in correct position yet
             return;
         }
