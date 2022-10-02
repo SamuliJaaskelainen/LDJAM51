@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5069587969484040534}
   - component: {fileID: -2503213613171649988}
   m_Layer: 0
-  m_Name: Double shot
+  m_Name: Triple shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,15 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7234500e2512613429eaf5e4425ffa5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotMesh: {fileID: -1235036923720343412, guid: 50e87ced44e33a546a05e0d72faf1df4,
+  shotMesh: {fileID: 8742448160084183273, guid: 50e87ced44e33a546a05e0d72faf1df4,
     type: 3}
   shopBullet: {fileID: 6735546056156724617, guid: 08fb68837dbd6d84588b2cfa599ba392,
     type: 3}
   bullets:
   - {fileID: 6735546056156724617, guid: d18aa6785a826b5439fdfab16a1a09dc, type: 3}
   - {fileID: 6735546056156724617, guid: d18aa6785a826b5439fdfab16a1a09dc, type: 3}
+  - {fileID: 6735546056156724617, guid: d18aa6785a826b5439fdfab16a1a09dc, type: 3}
   bulletOffsets:
-  - {x: -1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
+  - {x: -1, y: 0.8, z: 0}
+  - {x: 1, y: 0.8, z: 0}
+  - {x: 0, y: -0.8, z: 0}
   shake: 0.08
   ownerId: 0

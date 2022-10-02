@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotMesh: {fileID: 730504022478868151, guid: 50e87ced44e33a546a05e0d72faf1df4, type: 3}
+  shopBullet: {fileID: 6735546056156724617, guid: 08fb68837dbd6d84588b2cfa599ba392,
+    type: 3}
   bullets:
   - {fileID: 6735546056156724617, guid: d18aa6785a826b5439fdfab16a1a09dc, type: 3}
   bulletOffsets:

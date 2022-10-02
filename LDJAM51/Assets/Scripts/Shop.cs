@@ -99,15 +99,24 @@ public class Shop : MonoBehaviour
 
     void ShowCurrentGuns(int player)
     {
-        if (player == 1)
+        ManyMouseCrosshair crosshair = ManyMouseHandler.Instance.GetCrosshairByPlayer(player);
+        if (crosshair)
         {
-            p1Shop.SetActive(false);
-            p1Slots.SetActive(true);
-        }
-        else
-        {
-            p2Shop.SetActive(false);
-            p2Slots.SetActive(true);
+            if (player == 1)
+            {
+                p1Shop.SetActive(false);
+                p1Slots.SetActive(true);
+                for (int i = 0; i < p1slots.Count; ++i)
+                {
+                    p1slots[i].gunMesh.mesh = crosshair.GetGun(i).shotMesh;
+                    p1slots[i].gunName.text = crosshair.GetGun(i).name;
+                }
+            }
+            else
+            {
+                p2Shop.SetActive(false);
+                p2Slots.SetActive(true);
+            }
         }
     }
 
@@ -143,7 +152,6 @@ public class Shop : MonoBehaviour
                 ManyMouseCrosshair crosshair = ManyMouseHandler.Instance.GetCrosshairByPlayer(playerNumber);
                 if (crosshair)
                 {
-
                     for (int i = 0; i < guns.Count; ++i)
                     {
                         if (playerNumber == 1)

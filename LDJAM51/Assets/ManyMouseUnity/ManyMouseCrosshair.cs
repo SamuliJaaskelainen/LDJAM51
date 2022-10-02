@@ -84,7 +84,10 @@ public class ManyMouseCrosshair : MonoBehaviour
         gun1 = Instantiate(defaultGun, transform);
         gun2 = Instantiate(defaultGun, transform);
         gun3 = Instantiate(defaultGun, transform);
-
+        gun0.name = gun0.name.Replace("(Clone)", "");
+        gun1.name = gun1.name.Replace("(Clone)", "");
+        gun2.name = gun2.name.Replace("(Clone)", "");
+        gun3.name = gun3.name.Replace("(Clone)", "");
         guns[0] = gun0.GetComponent<Gun>();
         guns[1] = gun1.GetComponent<Gun>();
         guns[2] = gun2.GetComponent<Gun>();
@@ -210,7 +213,7 @@ public class ManyMouseCrosshair : MonoBehaviour
 
 
         timer += Time.deltaTime;
-        if (timer >= 10.0f)
+        if (timer >= 10.0f || Shop.shopOpen)
         {
             timer = 0.0f;
             bullet = 0;
@@ -241,6 +244,7 @@ public class ManyMouseCrosshair : MonoBehaviour
     {
         DestroyImmediate(oldGun.gameObject);
         oldGun = Instantiate(newGun, transform);
+        oldGun.name = oldGun.name.Replace("(Clone)", "");
         guns[gunId] = oldGun.GetComponent<Gun>();
 
         if (useMouse)
@@ -251,5 +255,10 @@ public class ManyMouseCrosshair : MonoBehaviour
         {
             guns[gunId].ownerId = mouse.ID;
         }
+    }
+
+    public Gun GetGun(int gunId)
+    {
+        return guns[gunId];
     }
 }
