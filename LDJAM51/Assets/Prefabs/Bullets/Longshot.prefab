@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5069587969484040534}
   - component: {fileID: 6735546056156724617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Longshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 8430991394163191960}
   - component: {fileID: 6371640844935087110}
   - component: {fileID: 8969784213183250448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
