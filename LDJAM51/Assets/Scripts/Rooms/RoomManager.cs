@@ -7,10 +7,12 @@ using Random = UnityEngine.Random;
 
 public class RoomManager : MonoBehaviour {
     public  GameObject[] roomGameObjects;
+    public  int          roomsUntilMaxDifficulty = 10;
     private Room[]       rooms;
     private float[]      cumulativeRoomWeights;
     private Room         currentRoom;
     private Room         nextRoom;
+    private float        difficulty = 0.0f;
     
     void Start()
     {
@@ -39,9 +41,10 @@ public class RoomManager : MonoBehaviour {
 
     private void NextRoom() {
         Destroy(currentRoom.gameObject);
-        currentRoom                         = nextRoom;
-        nextRoom                            = SpawnRoom(currentRoom.end.position, currentRoom.end.rotation);
-        currentRoom.blendListCamera.enabled = true;
+        currentRoom                         =  nextRoom;
+        nextRoom                            =  SpawnRoom(currentRoom.end.position, currentRoom.end.rotation);
+        currentRoom.blendListCamera.enabled =  true;
+        difficulty                          = Mathf.Min(1.0f, difficulty + 1.0f / roomsUntilMaxDifficulty);
     }
 
     private Room SpawnRoom(Vector3 startPosition, Quaternion startRotation) {
@@ -54,6 +57,7 @@ public class RoomManager : MonoBehaviour {
             }
         }
         room = Instantiate(room, transform);
+        Debug.LogFormat("Spawning room {0} with difficulty {1}", room.name, difficulty);
         
         room.transform.position -= room.start.position;
         room.transform.position += startPosition;
@@ -61,6 +65,8 @@ public class RoomManager : MonoBehaviour {
         Vector3 axis;
         (startRotation * Quaternion.Inverse(room.start.rotation)).ToAngleAxis(out angle, out axis);
         room.transform.RotateAround(startPosition, axis, angle);
+
+        SpawnGroup.Spawn(room.transform, difficulty);
         return room;
     }
 }

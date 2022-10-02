@@ -483,6 +483,7 @@ MonoBehaviour:
   roomGameObjects:
   - {fileID: 4863401842639100578, guid: 405f9b3ddeb61a64e9c0b5d265aebf98, type: 3}
   - {fileID: 4863401842639100578, guid: e0108401039ca4a4d89cdc2bb63bf76f, type: 3}
+  roomsUntilMaxDifficulty: 10
 --- !u!4 &1652905242
 Transform:
   m_ObjectHideFlags: 0
