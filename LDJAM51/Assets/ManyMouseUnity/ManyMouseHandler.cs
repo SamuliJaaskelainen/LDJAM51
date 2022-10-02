@@ -7,6 +7,8 @@ using ManyMouseUnity;
 
 public class ManyMouseHandler : MonoBehaviour
 {
+    public static ManyMouseHandler Instance;
+
     public static bool useMouse = true;
     public static bool showCrosshair = true;
     [SerializeField] Canvas canvas;
@@ -20,6 +22,11 @@ public class ManyMouseHandler : MonoBehaviour
     int player2MouseId;
 
     public List<ManyMouseCrosshair> Crosshairs { get { return crosshairs; } }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void OnEnable()
     {
@@ -70,17 +77,6 @@ public class ManyMouseHandler : MonoBehaviour
         }
     }
 
-    void Shoot(int crosshairId)
-    {
-        Debug.Log("Firing on crosshair: " + crosshairId);
-
-        Ray ray = gameCamera.ScreenPointToRay(crosshairs[crosshairId].GetScreenPosition());
-        if (Physics.Raycast(ray, out hit))
-        {
-            hit.transform.SendMessage("Hit");
-        }
-    }
-
     void LockMouse()
     {
         Cursor.lockState = useMouse ? CursorLockMode.Confined : CursorLockMode.Locked;
@@ -108,5 +104,36 @@ public class ManyMouseHandler : MonoBehaviour
                 crosshairs[i].Initialize(i, false);
             }
         }
+    }
+
+    public ManyMouseCrosshair GetCrosshairByMouseId(int mouseId)
+    {
+        for (int i = 0; i < crosshairs.Count; i++)
+        {
+            if (crosshairs[i].Mouse.ID == mouseId)
+            {
+                return crosshairs[i];
+            }
+        }
+        return null;
+    }
+    public ManyMouseCrosshair GetCrosshairByPlayer(int player)
+    {
+        if (useMouse)
+        {
+            return crosshairs[0];
+        }
+        else
+        {
+            for (int i = 0; i < crosshairs.Count; i++)
+            {
+                int playerId = player == 1 ? ManyMouseCrosshair.player1mouseId : ManyMouseCrosshair.player2mouseId;
+                if (crosshairs[i].Mouse.ID == playerId)
+                {
+                    return crosshairs[i];
+                }
+            }
+        }
+        return null;
     }
 }

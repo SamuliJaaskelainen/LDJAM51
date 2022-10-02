@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1594478708832803833}
   - component: {fileID: 4549532049354619595}
   m_Layer: 0
-  m_Name: SingleShot
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   axis: {x: 0, y: 1, z: 0}
   speed: 100
   space: 0
+  stoppable: 0
 --- !u!1 &1906140982597537234
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +158,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2529001051853195545, guid: af939f69e54971343aef62550f8d79e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,12 +200,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SINGLE
-
-    SHOT'
+  m_text: Single shot
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af939f69e54971343aef62550f8d79e5, type: 2}
+  m_sharedMaterial: {fileID: 2529001051853195545, guid: af939f69e54971343aef62550f8d79e5,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 2332795147748322965}
   - component: {fileID: 6738598769502866585}
   - component: {fileID: 3506284845513649808}
+  - component: {fileID: 1973851434175023192}
   m_Layer: 0
   m_Name: Card
   m_TagString: Button
@@ -300,7 +301,7 @@ Transform:
   m_GameObject: {fileID: 3104124182321656879}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -13.429589, y: -0.005221082, z: 0.019237448}
-  m_LocalScale: {x: 390.39435, y: 0.5006557, z: 0.6869845}
+  m_LocalScale: {x: 390.39432, y: 0.5006558, z: 0.68698454}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 462627406133911702}
@@ -344,3 +345,18 @@ MonoBehaviour:
   target: {fileID: 0}
   functionName: 
   functionParam: 
+  requiredPlayer: -1
+--- !u!114 &1973851434175023192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104124182321656879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2990b5a762af854ca7a85dc9c212394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunMesh: {fileID: 3586077763997003571}
+  gunName: {fileID: 6658527871651369183}

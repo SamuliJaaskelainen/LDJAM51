@@ -33,8 +33,8 @@ public class ManyMouseCrosshair : MonoBehaviour
     Camera gameCamera;
     RaycastHit hit;
 
-    static int player1mouseId = -1;
-    static int player2mouseId = -1;
+    public static int player1mouseId = -1;
+    public static int player2mouseId = -1;
 
     float timer;
 
@@ -102,6 +102,7 @@ public class ManyMouseCrosshair : MonoBehaviour
         if (useMouse)
         {
             Debug.Log("Shoot direct mouse " + " button " + buttonId);
+            player1mouseId = 0;
         }
         else
         {
@@ -125,6 +126,7 @@ public class ManyMouseCrosshair : MonoBehaviour
 
         if (bullet < guns.Length)
         {
+            Debug.Log("Shoot with " + guns[bullet].name);
             Ray ray = gameCamera.ScreenPointToRay(new Vector2(rectTransform.anchoredPosition.x, Screen.currentResolution.height + rectTransform.anchoredPosition.y));
             guns[bullet].Shoot(ray.origin, ray.direction);
             bullet++;
@@ -200,7 +202,6 @@ public class ManyMouseCrosshair : MonoBehaviour
 
             rectTransform.anchoredPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y - crosshairCanvas.referenceResolution.y);
 
-
             if (Input.GetMouseButtonDown(0))
             {
                 Shoot(0);
@@ -217,8 +218,38 @@ public class ManyMouseCrosshair : MonoBehaviour
         }
     }
 
-    public Vector2 GetScreenPosition()
+    public void ChangeGun(int gunId, GameObject newGun)
     {
-        return rectTransform.position;
+        switch (gunId)
+        {
+            case 0:
+                ReplaceGun(gunId, ref gun0, newGun);
+                break;
+            case 1:
+                ReplaceGun(gunId, ref gun1, newGun);
+                break;
+            case 2:
+                ReplaceGun(gunId, ref gun2, newGun);
+                break;
+            case 3:
+                ReplaceGun(gunId, ref gun3, newGun);
+                break;
+        }
+    }
+
+    void ReplaceGun(int gunId, ref GameObject oldGun, GameObject newGun)
+    {
+        DestroyImmediate(oldGun.gameObject);
+        oldGun = Instantiate(newGun, transform);
+        guns[gunId] = oldGun.GetComponent<Gun>();
+
+        if (useMouse)
+        {
+            guns[gunId].ownerId = 0;
+        }
+        else
+        {
+            guns[gunId].ownerId = mouse.ID;
+        }
     }
 }

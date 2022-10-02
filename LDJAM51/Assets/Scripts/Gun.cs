@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] string gunName = "Default";
+    public Mesh shotMesh;
     [SerializeField] Bullet[] bullets;
     [SerializeField] Vector3[] bulletOffsets;
     [SerializeField] float shake = 0.08f;
@@ -17,15 +17,10 @@ public class Gun : MonoBehaviour
             Bullet bullet = Instantiate(bullets[i], null);
             bullet.transform.position = position;
             bullet.transform.forward = forward;
+            bullet.transform.localPosition += bulletOffsets[i];
             bullet.Init(ownerId);
         }
 
         CameraShake.Instance.Shake(shake);
     }
-
-    public string GetName()
-    {
-        return gunName;
-    }
-
 }

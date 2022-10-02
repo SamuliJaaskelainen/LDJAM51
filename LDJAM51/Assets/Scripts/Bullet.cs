@@ -17,7 +17,8 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        Vector3 nextPosition = transform.position + transform.forward * speed * Time.deltaTime;
+        float dt = Shop.shopOpen ? Time.unscaledDeltaTime : Time.deltaTime;
+        Vector3 nextPosition = transform.position + transform.forward * speed * dt;
 
         if (Physics.Linecast(transform.position, nextPosition, out hit))
         {
@@ -25,7 +26,10 @@ public class Bullet : MonoBehaviour
 
             if (hit.transform.tag == "Button")
             {
-                hit.transform.SendMessage("Press");
+                if (hit.transform != null)
+                {
+                    hit.transform.SendMessage("Press", shooterId);
+                }
             }
 
             Collider[] colliders = Physics.OverlapSphere(hit.point, radius);
