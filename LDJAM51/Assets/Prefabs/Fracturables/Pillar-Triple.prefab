@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2728980645712434094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhysicsFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3287864925797888412}
   - component: {fileID: 2747679275463714894}
   - component: {fileID: 3643701613523475913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FracturableTriple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3011989298525567005}
   - component: {fileID: 8693157563770536741}
   - component: {fileID: 6976621058926575001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fracturable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2288780280061814856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar-Triple
   m_TagString: Untagged
   m_Icon: {fileID: 0}

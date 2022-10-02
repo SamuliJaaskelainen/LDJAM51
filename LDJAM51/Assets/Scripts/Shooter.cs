@@ -14,6 +14,23 @@ public class Shooter : MonoBehaviour {
     private                                 float[]    lightMaxIntensities;
     private                                 float[]    lightRanges;
 
+    bool isOnPlayersFrontSide() {
+        Transform target    = HitPoints.Instance.transform;
+        Vector3   direction = target.position - transform.position;
+
+        if (Physics.Raycast(
+                transform.position,
+                direction,
+                direction.magnitude,
+                ~LayerMask.GetMask("NoBlockLineOfSight")
+            )) {
+            Debug.DrawLine(transform.position, target.position, Color.red);
+            return false; 
+        }
+        Debug.DrawLine(transform.position, target.position, Color.green);
+        return Vector3.Dot(direction.normalized, target.forward) < -0.5;
+    }
+
     void Start() {
         timeUntilShoot = shootDelay + Random.Range(0.0f, shootDelay);
         lights = GetComponentsInChildren<Light>();
@@ -27,6 +44,7 @@ public class Shooter : MonoBehaviour {
     }
 
     void Update() {
+        if (!isOnPlayersFrontSide()) return;
         timeUntilShoot -= Time.deltaTime;
         AdjustLights();
         if (timeUntilShoot < 0.0f) {

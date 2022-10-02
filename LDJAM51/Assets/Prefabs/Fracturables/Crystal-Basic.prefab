@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1395227976}
   - component: {fileID: 8103665411958043221}
   - component: {fileID: 4591839825166285414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fracturable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1478492195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhysicsFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7628821459913212046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crystal-Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 8100791902947616974}
   - component: {fileID: 8100791902947616977}
   - component: {fileID: 8100791902947616975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FracturableCrystalBasic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
