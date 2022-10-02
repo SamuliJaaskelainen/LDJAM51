@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5069587969484040534}
   - component: {fileID: 6735546056156724617}
   m_Layer: 0
-  m_Name: Bullet-Shop
+  m_Name: Shopshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d4e76008f45ac40b1de8f03026b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 30
   radius: 0.1
   impulse: 0.1
 --- !u!1 &6399120765849807325
@@ -110,7 +110,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c60a2c377606e5640a5306295e892f2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,6 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axis: {x: 0, y: 1, z: 0}
-  speed: 400
+  speed: 1000
   space: 1
-  stoppable: 1
+  stoppable: 0

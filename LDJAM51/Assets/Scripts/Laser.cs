@@ -2,23 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Laser : Bullet
 {
-    public float speed;
-    public float radius = 0.4f;
-    public float impulse = -0.5f;
-    public int penetration = 1;
-    protected RaycastHit hit;
-    protected int shooterId;
-    protected int targetsHit = 0;
-
-    public void Init(int id)
-    {
-        shooterId = id;
-        Destroy(gameObject, 10.0f);
-    }
-
-    public virtual void Update()
+    public override void Update()
     {
         float dt = Shop.shopOpen ? Time.unscaledDeltaTime : Time.deltaTime;
         Vector3 nextPosition = transform.position + transform.forward * speed * dt;
@@ -56,6 +42,10 @@ public class Bullet : MonoBehaviour
             if (targetsHit >= penetration)
             {
                 Destroy(gameObject);
+            }
+            else
+            {
+                transform.forward = Vector3.Reflect(transform.forward, hit.normal);
             }
         }
         else

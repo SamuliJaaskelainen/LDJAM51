@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Shotgun : Gun
 {
-    public Mesh shotMesh;
-    public Bullet shopBullet;
-    public Bullet[] bullets;
-    public Vector3[] bulletOffsets;
-    public float shake = 0.08f;
-    public int ownerId;
+    public float spread = 1.0f;
 
-    public virtual void Shoot(Vector3 position, Vector3 forward)
+    public override void Shoot(Vector3 position, Vector3 forward)
     {
         for (int i = 0; i < bullets.Length; ++i)
         {
@@ -26,7 +21,7 @@ public class Gun : MonoBehaviour
             }
             bullet.transform.position = position;
             bullet.transform.forward = forward;
-            bullet.transform.localPosition += bulletOffsets[i];
+            bullet.transform.localPosition += new Vector3(Random.insideUnitCircle.x * spread, Random.insideUnitCircle.y * spread, 0.0f);
             bullet.Init(ownerId);
 
             if (Shop.shopOpen)

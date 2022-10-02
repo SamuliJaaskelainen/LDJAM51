@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &308059798029136612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5069587969484040534}
+  - component: {fileID: 977040227201432117}
+  m_Layer: 0
+  m_Name: Super shotgun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5069587969484040534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308059798029136612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &977040227201432117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308059798029136612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb3d4a6dfa9f0044afbc22c347b3338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotMesh: {fileID: -3378947990658750175, guid: 50e87ced44e33a546a05e0d72faf1df4,
+    type: 3}
+  shopBullet: {fileID: 6735546056156724617, guid: 08fb68837dbd6d84588b2cfa599ba392,
+    type: 3}
+  bullets:
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  bulletOffsets: []
+  shake: 0.08
+  ownerId: 0
+  spread: 1.25
