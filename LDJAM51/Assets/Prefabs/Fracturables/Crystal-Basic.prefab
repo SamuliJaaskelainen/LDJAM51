@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1395227973}
   - component: {fileID: 1395227974}
-  - component: {fileID: 1395227975}
   - component: {fileID: 1395227976}
   - component: {fileID: 8103665411958043221}
   - component: {fileID: 4591839825166285414}
@@ -61,22 +60,6 @@ MonoBehaviour:
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
   levelsOfRecursion: 2
---- !u!114 &1395227975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395227972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f919694bf6b285347a721bfc61e9513a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axis: {x: 0, y: 0, z: 1}
-  speed: 100
-  space: 1
-  stoppable: 1
 --- !u!114 &1395227976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cafd1686a2687b4cb68e27cb190c6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeAlive: 0
 --- !u!54 &4591839825166285414
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191,7 +175,7 @@ Transform:
   - {fileID: 1395227973}
   - {fileID: 1478492195}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &7740340999039355163
 GameObject:

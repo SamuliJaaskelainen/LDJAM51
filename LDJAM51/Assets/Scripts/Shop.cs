@@ -28,6 +28,8 @@ public class Shop : MonoBehaviour
 
     int maxShopIndex = 3;
 
+    float updateTimer;
+
     void OnEnable()
     {
         Time.timeScale = 0.0f;
@@ -50,6 +52,18 @@ public class Shop : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         shopOpen = false;
+    }
+
+    private void Update()
+    {
+        updateTimer += Time.unscaledTime;
+
+        if (updateTimer > 0.1f)
+        {
+            Debug.Log("Update physics");
+            updateTimer = 0.0f;
+            Physics.SyncTransforms();
+        }
     }
 
     public void Skip(string player)

@@ -6384,7 +6384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891204416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.70079, y: -19.254417, z: -33.279125}
+  m_LocalPosition: {x: -10.70019, y: 65.07444, z: -20.795963}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6681,8 +6681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   normalRooms:
-  - {fileID: 4863401842639100578, guid: 405f9b3ddeb61a64e9c0b5d265aebf98, type: 3}
-  - {fileID: 4863401842639100578, guid: e0108401039ca4a4d89cdc2bb63bf76f, type: 3}
+  - {fileID: 4863401842639100578, guid: 83c4484143071c242912d0f7dc09ca17, type: 3}
+  - {fileID: 4863401842639100578, guid: 6b537d58e2c4e9f40b655b39603aa88d, type: 3}
   shopRooms:
   - {fileID: 4863401842639100578, guid: e7d5775c4dd63a045831f310463ffe3a, type: 3}
   roomsUntilMaxDifficulty: 10
