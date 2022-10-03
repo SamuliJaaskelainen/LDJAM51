@@ -6906,8 +6906,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0
-  intensityMultiplier: 10
-  speed: 10
+  intensityMultiplier: 12
+  speed: 4.4
+  addMultiplier: 3.4
   noiseSettings: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
 --- !u!114 &1891204424
 MonoBehaviour:
@@ -7174,6 +7175,8 @@ MonoBehaviour:
   roomsBetweenShops: 2
   roomsBetweenShopsIncrease: 1
   maxRoomsBetweenShops: 6
+  pupusMurdered: 0
+  roomsSurvived: 0
 --- !u!1001 &1933924079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8634,6 +8637,7 @@ MonoBehaviour:
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
   levelsOfRecursion: 2
+  isPupu: 0
 --- !u!114 &3506284844342617947
 MonoBehaviour:
   m_ObjectHideFlags: 0
