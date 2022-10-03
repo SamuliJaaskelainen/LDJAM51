@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848208696253918971}
-  - component: {fileID: 1713175623220541292}
   - component: {fileID: -6602521687755497127}
   m_Layer: 0
   m_Name: AudioManager
@@ -33,20 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1713175623220541292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896479311125920932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c86409d14166714fa4a4925e3715ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffects: []
-  audioPrefab: {fileID: 0}
 --- !u!114 &-6602521687755497127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,4 +56,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f95650f5955c46a4981f648186897fba, type: 3}
   - {fileID: 8300000, guid: 5d02bb55cc032f24193fd9078fb45f9e, type: 3}
   - {fileID: 8300000, guid: 8bd85c2924e71594286922b1d1c94182, type: 3}
-  audioPrefab: {fileID: 0}
+  musicLayers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  audioPrefab: {fileID: 2543033851613912946, guid: 83ba3f863a01f8b4f8ee309267b1c80c,
+    type: 3}
+  song_1: {fileID: 0}
+  song_2: {fileID: 0}
+  song_3: {fileID: 0}
+  activeSong: {fileID: 0}
