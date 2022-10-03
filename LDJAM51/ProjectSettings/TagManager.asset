@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - Floor
   - Button
+  - UICamera
   layers:
   - Default
   - TransparentFX

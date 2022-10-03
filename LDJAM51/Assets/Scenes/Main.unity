@@ -1145,6 +1145,8 @@ MonoBehaviour:
   p2Slots: {fileID: 1341931843}
   p1Skip: {fileID: 433154266}
   p2Skip: {fileID: 1842551181}
+  p1SlotHelp: {fileID: 549725425}
+  p2SlotHelp: {fileID: 1794889179}
   guns:
   - {fileID: 308059798029136612, guid: 4fee8e4a5556b924495bc3bc4d7d1ec2, type: 3}
   - {fileID: 308059798029136612, guid: 414002227a135994fa5774e1d107df61, type: 3}
@@ -5950,7 +5952,7 @@ GameObject:
   - component: {fileID: 1749606563}
   m_Layer: 0
   m_Name: MenuCamera
-  m_TagString: Untagged
+  m_TagString: UICamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6769,7 +6771,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891204416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.650955, y: -15.890295, z: -47.987274}
+  m_LocalPosition: {x: 78.70079, y: -19.254417, z: -33.279125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -20,6 +20,8 @@ public class Shop : MonoBehaviour
     [SerializeField] GameObject p2Slots;
     [SerializeField] TextMeshPro p1Skip;
     [SerializeField] TextMeshPro p2Skip;
+    [SerializeField] TextMeshPro p1SlotHelp;
+    [SerializeField] TextMeshPro p2SlotHelp;
 
     [SerializeField] List<GameObject> guns = new List<GameObject>();
 
@@ -147,10 +149,12 @@ public class Shop : MonoBehaviour
             if (playerNumber == 1)
             {
                 p1SelectedGunCard = cardNumber;
+                p1SlotHelp.text = "Replace with " + p1cards[p1SelectedGunCard].gunName.text;
             }
             else
             {
                 p2SelectedGunCard = cardNumber;
+                p1SlotHelp.text = "Replace with " + p1cards[p2SelectedGunCard].gunName.text;
             }
         }
 

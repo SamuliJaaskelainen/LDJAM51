@@ -29,13 +29,20 @@ public class GameStateManager : MonoBehaviour
             CloseShop();
         }
 
-        if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(1) && !Shop.shopOpen)
+        if (HitPoints.hitPoints > 0)
         {
-            Time.timeScale = 10.0f;
+            if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(1) && !Shop.shopOpen)
+            {
+                Time.timeScale = 10.0f;
+            }
+            else if (Input.GetKeyUp(KeyCode.F) || Input.GetMouseButtonUp(1))
+            {
+                Time.timeScale = Shop.shopOpen ? 0.0f : 1.0f;
+            }
         }
-        else if (Input.GetKeyUp(KeyCode.F) || Input.GetMouseButtonUp(1))
+        else
         {
-            Time.timeScale = Shop.shopOpen ? 0.0f : 1.0f;
+            Time.timeScale = 0.0f;
         }
     }
 

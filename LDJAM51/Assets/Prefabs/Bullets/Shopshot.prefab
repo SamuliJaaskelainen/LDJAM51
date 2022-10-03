@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d4e76008f45ac40b1de8f03026b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
+  bloodParticle: {fileID: 0}
   speed: 30
   radius: 0.1
   impulse: 0.1
@@ -77,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 6399120765849807325}
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.01, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5069587969484040534}
@@ -90,7 +92,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6399120765849807325}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8969784213183250448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -145,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f919694bf6b285347a721bfc61e9513a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: {x: 0, y: 1, z: 0}
+  axis: {x: 1, y: 0, z: 0.2}
   speed: 1000
   space: 1
   stoppable: 0

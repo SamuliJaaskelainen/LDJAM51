@@ -59,6 +59,7 @@ public class Bullet : MonoBehaviour
                     Instantiate(bloodParticle, transform.position, Quaternion.identity);
                 }
             }
+
             Debug.DrawLine(transform.position, nextPosition, Color.red);
 
             targetsHit++;

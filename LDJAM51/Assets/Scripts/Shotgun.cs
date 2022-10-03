@@ -21,7 +21,7 @@ public class Shotgun : Gun
             }
             bullet.transform.position = position;
             bullet.transform.forward = forward;
-            bullet.transform.localPosition += new Vector3(Random.insideUnitCircle.x * spread, Random.insideUnitCircle.y * spread, 0.0f);
+            bullet.transform.localPosition += new Vector3(Random.insideUnitSphere.x * spread, Random.insideUnitSphere.y * spread, 0.0f);
             bullet.Init(ownerId);
 
             if (Shop.shopOpen)

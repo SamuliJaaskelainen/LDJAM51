@@ -31,6 +31,7 @@ public class ManyMouseCrosshair : MonoBehaviour
     Vector2 realPosition;
     bool useMouse;
     Camera gameCamera;
+    Camera crosshairCamera;
     RaycastHit hit;
 
     public static int player1mouseId = -1;
@@ -79,6 +80,7 @@ public class ManyMouseCrosshair : MonoBehaviour
 
         crosshairCanvas = GameObject.Find("CrosshairCanvas").GetComponent<CanvasScaler>();
         gameCamera = Camera.main;
+        crosshairCamera = GameObject.FindGameObjectWithTag("UICamera").GetComponent<Camera>();
 
         gun0 = Instantiate(defaultGun, transform);
         gun1 = Instantiate(defaultGun, transform);
@@ -131,8 +133,18 @@ public class ManyMouseCrosshair : MonoBehaviour
         if (bullet < guns.Length)
         {
             Debug.Log("Shoot with " + guns[bullet].name);
-            Ray ray = gameCamera.ScreenPointToRay(new Vector2(rectTransform.anchoredPosition.x, Screen.currentResolution.height + rectTransform.anchoredPosition.y));
-            guns[bullet].Shoot(ray.origin, ray.direction);
+
+            if (Shop.shopOpen)
+            {
+                Ray ray = crosshairCamera.ScreenPointToRay(new Vector2(rectTransform.anchoredPosition.x, Screen.currentResolution.height + rectTransform.anchoredPosition.y));
+                guns[bullet].Shoot(gameCamera.transform.TransformPoint(ray.origin), gameCamera.transform.TransformDirection(ray.direction));
+            }
+            else
+            {
+                Ray ray = gameCamera.ScreenPointToRay(new Vector2(rectTransform.anchoredPosition.x, Screen.currentResolution.height + rectTransform.anchoredPosition.y));
+                guns[bullet].Shoot(ray.origin, ray.direction);
+            }
+
             if (useMouse)
             {
                 ShootCanvasManager.Instance.SetGunActive(1, bullet, false);
