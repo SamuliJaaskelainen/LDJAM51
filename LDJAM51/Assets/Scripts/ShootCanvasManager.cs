@@ -12,7 +12,7 @@ public class ShootCanvasManager : MonoBehaviour
 
     [SerializeField] CanvasScaler mainCanvasScaler;
     [SerializeField] RectTransform gameWindow;
-    [SerializeField] RenderTexture gameRenderTexture;
+    [SerializeField] RawImage gameImage;
 
     [SerializeField] List<MeshFilter> p1guns = new List<MeshFilter>();
     [SerializeField] List<MeshFilter> p2guns = new List<MeshFilter>();
@@ -20,6 +20,8 @@ public class ShootCanvasManager : MonoBehaviour
     [SerializeField] List<GameObject> hearts = new List<GameObject>();
 
     [SerializeField] Transform timerArrow;
+
+    RenderTexture gameRenderTexture;
 
     private void Awake()
     {
@@ -32,11 +34,15 @@ public class ShootCanvasManager : MonoBehaviour
         Debug.LogFormat("Resolution ({0}, {1})", Screen.width, Screen.height);
         mainCanvasScaler.referenceResolution = new Vector2(Screen.width, Screen.height);
         gameRenderTexture = new RenderTexture(Screen.width, Screen.height, 32);
+        Camera.main.targetTexture = gameRenderTexture;
+        gameImage.texture = gameRenderTexture;
+
         Debug.LogFormat("RenderTexture resolution ({0}, {1})", gameRenderTexture.width, gameRenderTexture.height);
         UpdateBorder();
     }
 
-    void OnApplicationQuit() {
+    void OnApplicationQuit()
+    {
         PlayerPrefs.DeleteAll();
     }
 

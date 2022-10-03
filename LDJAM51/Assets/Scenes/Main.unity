@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8600000, guid: 92e921794ca260a42a0195c0d1e2e8a7, type: 2}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -6831,7 +6831,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 87
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8600000, guid: 92e921794ca260a42a0195c0d1e2e8a7, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -7674,7 +7674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCanvasScaler: {fileID: 1998088974}
   gameWindow: {fileID: 293796329}
-  gameRenderTexture: {fileID: 8600000, guid: 92e921794ca260a42a0195c0d1e2e8a7, type: 2}
+  gameImage: {fileID: 293796330}
   p1guns:
   - {fileID: 1112370160}
   - {fileID: 1852122326}

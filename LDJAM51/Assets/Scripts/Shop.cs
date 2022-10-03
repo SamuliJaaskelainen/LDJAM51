@@ -32,6 +32,8 @@ public class Shop : MonoBehaviour
 
     float updateTimer;
 
+    List<int> cardRandoms = new List<int>();
+
     void OnEnable()
     {
         Time.timeScale = 0.0f;
@@ -97,16 +99,30 @@ public class Shop : MonoBehaviour
         p1Shop.SetActive(true);
         p2Shop.SetActive(!p2skip);
 
+        int r;
+        cardRandoms.Clear();
         for (int i = 0; i < p1cards.Count; ++i)
         {
-            int r = Random.Range(0, maxShopIndex);
+            //do
+            {
+                r = Random.Range(0, maxShopIndex);
+            }
+            //while (!cardRandoms.Contains(r));
+            cardRandoms.Add(r);
+
             p1cards[i].gunMesh.mesh = guns[r].GetComponent<Gun>().shotMesh;
             p1cards[i].gunName.text = guns[r].name;
         }
 
         for (int i = 0; i < p2cards.Count; ++i)
         {
-            int r = Random.Range(0, maxShopIndex);
+            //do
+            {
+                r = Random.Range(0, maxShopIndex);
+            }
+            //while (!cardRandoms.Contains(r));
+            cardRandoms.Add(r);
+
             p2cards[i].gunMesh.mesh = guns[r].GetComponent<Gun>().shotMesh;
             p2cards[i].gunName.text = guns[r].name;
         }
