@@ -48,19 +48,24 @@ class RoomCollection {
 }
 
 public class RoomManager : MonoBehaviour {
+    public static                                    RoomManager    Instance;
     public                                           bool           debug = false;
     [FormerlySerializedAs("roomGameObjects")] public GameObject[]   normalRooms;
-    public GameObject[]   shopRooms;
+    public                                           GameObject[]   shopRooms;
     public                                           int            roomsUntilMaxDifficulty   = 10;
     public                                           int            roomsBetweenShops         = 2;
     public                                           int            roomsBetweenShopsIncrease = 1;
     public                                           int            maxRoomsBetweenShops      = 6;
-    public                                          Room           currentRoom {get; private set;}
+    public                                           Room           currentRoom {get; private set;}
     private                                          Room           nextRoom;
-    private                                          float          difficulty = 0.0f;
+    public                                           float          difficulty { get; private set; }
     private                                          RoomCollection normalRoomCollection;
     private                                          RoomCollection shopRoomCollection;
     private                                          int            roomsUntilShop;
+    
+    private void Awake() {
+        Instance = this;
+    }
     
     void Start() {
         normalRoomCollection = new RoomCollection(normalRooms);
@@ -73,6 +78,7 @@ public class RoomManager : MonoBehaviour {
         roomsUntilShop                      = roomsBetweenShops;
         
         currentRoom.blendListCamera.enabled = true;
+        difficulty                          = 0.0f;
     }
 
     private void Update() {

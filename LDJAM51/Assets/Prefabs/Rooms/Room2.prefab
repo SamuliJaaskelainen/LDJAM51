@@ -1694,8 +1694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b82ec2eabce7e144a0bffa8b0f45e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easyPointsMin: 1
-  easyPointsMax: 2
+  easyPointsMin: 2
+  easyPointsMax: 3
   hardPointsMin: 2
   hardPointsMax: 6
 --- !u!1 &5675925855533990640

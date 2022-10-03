@@ -6906,7 +6906,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0
+  intensityMultiplier: 10
   speed: 10
+  noiseSettings: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
 --- !u!114 &1891204424
 MonoBehaviour:
   m_ObjectHideFlags: 0

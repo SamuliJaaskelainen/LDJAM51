@@ -32,6 +32,11 @@ public class Shooter : MonoBehaviour {
     }
 
     void Start() {
+        if (RoomManager.Instance.difficulty < 0.2f) {
+            shootDelay = 9999.0f;
+        }
+        shootDelay = Mathf.Lerp(7.0f, 3.0f, RoomManager.Instance.difficulty);
+        
         timeUntilShoot = shootDelay + Random.Range(0.0f, shootDelay);
         lights = GetComponentsInChildren<Light>();
         lightMaxIntensities = new float[lights.Length];

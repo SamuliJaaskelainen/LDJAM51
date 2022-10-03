@@ -49,7 +49,7 @@ public class SpawnGroup : MonoBehaviour {
     public void Spawn(float difficulty0to1) {
         float min            = Mathf.Lerp(easyPointsMin, hardPointsMin, difficulty0to1);
         float max            = Mathf.Lerp(easyPointsMax, hardPointsMax, difficulty0to1);
-        float pointLeft      = Random.Range(min, max) + 1e-4f;
+        float pointLeft      = Random.Range(min, max + 0.999f);
         float startingPoints = pointLeft;
 
         while (true) {

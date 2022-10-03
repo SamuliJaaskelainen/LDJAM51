@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,15 @@ public class ShootCanvasManager : MonoBehaviour
 
     void Start()
     {
+        Debug.LogFormat("Resolution ({0}, {1})", Screen.width, Screen.height);
         mainCanvasScaler.referenceResolution = new Vector2(Screen.width, Screen.height);
         gameRenderTexture = new RenderTexture(Screen.width, Screen.height, 32);
+        Debug.LogFormat("RenderTexture resolution ({0}, {1})", gameRenderTexture.width, gameRenderTexture.height);
         UpdateBorder();
+    }
+
+    void OnApplicationQuit() {
+        PlayerPrefs.DeleteAll();
     }
 
     void UpdateBorder()
