@@ -60,6 +60,7 @@ MonoBehaviour:
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
   levelsOfRecursion: 2
+  isPupu: 1
 --- !u!114 &1395227976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ Transform:
   - {fileID: 1395227973}
   - {fileID: 1478492195}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &7740340999039355163
 GameObject:
