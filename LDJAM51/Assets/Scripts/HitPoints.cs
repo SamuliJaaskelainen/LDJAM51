@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using TMPro;
 
 public class HitPoints : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class HitPoints : MonoBehaviour
 
     float damageEffectValue = 0.0f;
     float refreshEffectValue = 0.0f;
+
+    public TextMeshProUGUI score;
 
     public void Awake()
     {
@@ -47,6 +50,7 @@ public class HitPoints : MonoBehaviour
             if (hitPoints <= 0)
             {
                 Time.timeScale = 0.0f;
+                score.text = RoomManager.Instance.pupusMurdered + " pupus murdered";
                 gameOver.SetActive(true);
             }
         }
