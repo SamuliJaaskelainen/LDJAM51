@@ -176,16 +176,18 @@ public class Shop : MonoBehaviour
                             if (guns[i].name == p1cards[p1SelectedGunCard].gunName.text)
                             {
                                 crosshair.ChangeGun(slotNumber, guns[i]);
+                                Skip("1");
+                                return;
                             }
-                            Skip("1");
                         }
                         else
                         {
                             if (guns[i].name == p2cards[p2SelectedGunCard].gunName.text)
                             {
                                 crosshair.ChangeGun(slotNumber, guns[i]);
+                                Skip("2");
+                                return;
                             }
-                            Skip("2");
                         }
                     }
                 }

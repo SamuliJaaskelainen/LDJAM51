@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3586077763997003571}
   - component: {fileID: 1594478708832803833}
   - component: {fileID: 4549532049354619595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 5816344083728718531}
   - component: {fileID: 4550596734472931701}
   - component: {fileID: 6658527871651369183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,10 +282,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2332795147748322965}
-  - component: {fileID: 6738598769502866585}
   - component: {fileID: 3506284845513649808}
   - component: {fileID: 1973851434175023192}
-  m_Layer: 0
+  - component: {fileID: 7439017963141488958}
+  m_Layer: 6
   m_Name: Card
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -309,8 +309,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!65 &6738598769502866585
-BoxCollider:
+--- !u!114 &3506284845513649808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104124182321656879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf990bd78dee9b4aa76a70a5a24ae30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: SelectGun
+  functionParam: 1.0
+  requiredPlayer: 1
+--- !u!114 &1973851434175023192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104124182321656879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2990b5a762af854ca7a85dc9c212394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunMesh: {fileID: 3586077763997003571}
+  gunName: {fileID: 6658527871651369183}
+--- !u!136 &7439017963141488958
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -327,36 +357,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.007781596, y: 0.014709167, z: 0.029315276}
-  m_Center: {x: -0.004982466, y: -0.000193925, z: 0.0004503109}
---- !u!114 &3506284845513649808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3104124182321656879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf990bd78dee9b4aa76a70a5a24ae30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  functionName: 
-  functionParam: 
-  requiredPlayer: -1
---- !u!114 &1973851434175023192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3104124182321656879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2990b5a762af854ca7a85dc9c212394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunMesh: {fileID: 3586077763997003571}
-  gunName: {fileID: 6658527871651369183}
+  serializedVersion: 2
+  m_Radius: 0.008
+  m_Height: 0.03
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}

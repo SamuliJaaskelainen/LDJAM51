@@ -6696,7 +6696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891204416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.70079, y: -19.254417, z: -34.591125}
+  m_LocalPosition: {x: 86.650955, y: -15.890295, z: -47.987274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7012,6 +7012,7 @@ MonoBehaviour:
   normalRooms:
   - {fileID: 4863401842639100578, guid: 83c4484143071c242912d0f7dc09ca17, type: 3}
   - {fileID: 4863401842639100578, guid: 6b537d58e2c4e9f40b655b39603aa88d, type: 3}
+  - {fileID: 4863401842639100578, guid: 80a17bd6b8afc1544b07bedb5a6a3acd, type: 3}
   shopRooms:
   - {fileID: 4863401842639100578, guid: e7d5775c4dd63a045831f310463ffe3a, type: 3}
   roomsUntilMaxDifficulty: 10
@@ -8345,16 +8346,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2095760331}
     m_Modifications:
-    - target: {fileID: 945832338465012268, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906140982597537234, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2332795147748322965, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
       propertyPath: m_RootOrder
@@ -8415,31 +8406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
-    - target: {fileID: 3104124182321656879, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 241591520}
-    - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
-        type: 3}
-      propertyPath: functionName
-      value: SelectGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
-        type: 3}
-      propertyPath: functionParam
-      value: 1.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
-        type: 3}
-      propertyPath: requiredPlayer
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
