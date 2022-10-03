@@ -43,7 +43,7 @@ public class FracturableRoot : MonoBehaviour
             return;
         }
         if (isPupu) {
-            RoomManager.Instance.pupusMurdered = false;
+            RoomManager.Instance.pupusMurdered += 1;
         }
         shattered = true;
         var fracturables = gameObject.GetComponentsInChildren<Fracturable>();
