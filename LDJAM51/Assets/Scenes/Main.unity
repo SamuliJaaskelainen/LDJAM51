@@ -449,7 +449,7 @@ PrefabInstance:
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
       propertyPath: functionParam
-      value: 1.2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
@@ -596,7 +596,7 @@ PrefabInstance:
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
       propertyPath: functionParam
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
@@ -1131,13 +1131,13 @@ MonoBehaviour:
   - {fileID: 1658384220}
   p1slots:
   - {fileID: 791359819}
-  - {fileID: 125530414}
   - {fileID: 62871028}
+  - {fileID: 125530414}
   - {fileID: 1221056241}
   p2slots:
   - {fileID: 1134549044}
-  - {fileID: 1728435202}
   - {fileID: 1933924081}
+  - {fileID: 1728435202}
   - {fileID: 1126975812}
   p1Shop: {fileID: 2095760330}
   p2Shop: {fileID: 1221884537}
@@ -3405,6 +3405,12 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &902256434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3006083322146081785, guid: 41e9539bfff48f149b70f23bd87a8182,
+    type: 3}
+  m_PrefabInstance: {fileID: 380211608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &923412752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1478492195, guid: c82cf452357c6ed49a00d6e6962bd6dc,
@@ -4761,8 +4767,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1134549043}
-  - {fileID: 1728435201}
   - {fileID: 1933924080}
+  - {fileID: 1728435201}
   - {fileID: 1126975811}
   - {fileID: 1794889178}
   m_Father: {fileID: 241591520}
@@ -5219,8 +5225,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 791359818}
-  - {fileID: 125530413}
   - {fileID: 62871027}
+  - {fileID: 125530413}
   - {fileID: 1221056240}
   - {fileID: 549725424}
   m_Father: {fileID: 241591520}
@@ -5828,7 +5834,7 @@ PrefabInstance:
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
       propertyPath: functionParam
-      value: 2.1
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
@@ -6797,6 +6803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shop: {fileID: 241591519}
   level: {fileID: 1926912824}
+  playerUI: {fileID: 902256434}
 --- !u!114 &1891204427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7122,7 +7129,7 @@ PrefabInstance:
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}
       propertyPath: functionParam
-      value: 2.2
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 3506284845513649808, guid: 4cfe74c65a5a16e488c4b195524f5cd3,
         type: 3}

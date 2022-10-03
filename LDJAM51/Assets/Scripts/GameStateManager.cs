@@ -8,6 +8,7 @@ public class GameStateManager : MonoBehaviour
 
     public GameObject shop;
     public GameObject level;
+    public GameObject playerUI;
     private Transform roomCameraParent;
     private Transform roomCamera;
 
@@ -28,11 +29,11 @@ public class GameStateManager : MonoBehaviour
             CloseShop();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(1) && !Shop.shopOpen)
         {
             Time.timeScale = 10.0f;
         }
-        else if (Input.GetKeyUp(KeyCode.F))
+        else if (Input.GetKeyUp(KeyCode.F) || Input.GetMouseButtonUp(1))
         {
             Time.timeScale = Shop.shopOpen ? 0.0f : 1.0f;
         }
@@ -41,6 +42,7 @@ public class GameStateManager : MonoBehaviour
     public void OpenShop()
     {
         shop.SetActive(true);
+        playerUI.SetActive(false);
 
         // Hack: prevent room camera from being deactivated when shop is opened
         roomCamera = level.GetComponent<RoomManager>().currentRoom.blendListCamera.transform;
@@ -54,6 +56,7 @@ public class GameStateManager : MonoBehaviour
     {
         shop.SetActive(false);
         level.SetActive(true);
+        playerUI.SetActive(true);
 
         // Hack: restore room camera
         if (roomCamera)

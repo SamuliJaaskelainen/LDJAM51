@@ -283,22 +283,7 @@ public class ManyMouseCrosshair : MonoBehaviour
         oldGun = Instantiate(newGun, transform);
         oldGun.name = oldGun.name.Replace("(Clone)", "");
         guns[gunId] = oldGun.GetComponent<Gun>();
-
-        if (useMouse)
-        {
-            ShootCanvasManager.Instance.SetGun(1, gunId, guns[gunId].shotMesh);
-        }
-        else
-        {
-            if (mouse.ID == player1mouseId)
-            {
-                ShootCanvasManager.Instance.SetGun(1, gunId, guns[gunId].shotMesh);
-            }
-            else
-            {
-                ShootCanvasManager.Instance.SetGun(2, gunId, guns[gunId].shotMesh);
-            }
-        }
+        Debug.Log("Replace gun at slot " + gunId + " with " + guns[gunId].name);
 
         if (useMouse)
         {
@@ -308,10 +293,34 @@ public class ManyMouseCrosshair : MonoBehaviour
         {
             guns[gunId].ownerId = mouse.ID;
         }
+
+        Invoke("UpdateUIMeshes", 0.1f);
     }
 
     public Gun GetGun(int gunId)
     {
         return guns[gunId];
+    }
+
+    void UpdateUIMeshes()
+    {
+        for (int i = 0; i < guns.Length; ++i)
+        {
+            if (useMouse)
+            {
+                ShootCanvasManager.Instance.SetGun(1, i, guns[i].shotMesh);
+            }
+            else
+            {
+                if (mouse.ID == player1mouseId)
+                {
+                    ShootCanvasManager.Instance.SetGun(1, i, guns[i].shotMesh);
+                }
+                else
+                {
+                    ShootCanvasManager.Instance.SetGun(2, i, guns[i].shotMesh);
+                }
+            }
+        }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject hitParticle;
+    public GameObject bloodParticle;
     public float speed;
     public float radius = 0.4f;
     public float impulse = -0.5f;
@@ -36,6 +38,7 @@ public class Bullet : MonoBehaviour
                 }
             }
 
+            bool fracture = false;
             Collider[] colliders = Physics.OverlapSphere(hit.point, radius);
             foreach (var collider in colliders)
             {
@@ -49,6 +52,12 @@ public class Bullet : MonoBehaviour
                 impactInfo.radius = radius;
                 impactInfo.impulse = (transform.position - nextPosition).normalized * impulse;
                 fracturable.CauseFracture(impactInfo);
+                fracture = true;
+
+                if (bloodParticle)
+                {
+                    Instantiate(bloodParticle, transform.position, Quaternion.identity);
+                }
             }
             Debug.DrawLine(transform.position, nextPosition, Color.red);
 
@@ -56,6 +65,11 @@ public class Bullet : MonoBehaviour
 
             if (targetsHit >= penetration)
             {
+                if (hitParticle && !fracture)
+                {
+                    Instantiate(hitParticle, transform.position, Quaternion.identity);
+                }
+
                 Destroy(gameObject);
             }
         }

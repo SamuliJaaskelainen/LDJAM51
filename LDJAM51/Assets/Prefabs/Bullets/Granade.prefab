@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b0ec1cfed543149b6a28f37713f7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 686786341235992996, guid: 9ef0224a341c52c4da46f624e62a8529,
+    type: 3}
+  bloodParticle: {fileID: 686786341235992996, guid: 04d349fa11dcaff4c99ad91509a4d47a,
+    type: 3}
   speed: 15
   radius: 2
   impulse: 0.6
