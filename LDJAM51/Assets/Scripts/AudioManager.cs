@@ -5,9 +5,15 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioClip[] soundEffects;
+    public AudioSource[] musicLayers;
 
     public GameObject audioPrefab;
-   
+    
+    public Song song_1;
+    public Song song_2;
+    public Song song_3;
+    public Song activeSong;
+
     List<GameObject> audioPoolObject = new List<GameObject>();
 
     public static AudioManager Instance;
@@ -27,40 +33,40 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void PlaySound(AudioClip audioClip, float volume = 1.0f, float pitch = 1.0f)
+    public void PlaySound(AudioClip audioClip, Vector3 position, float volume = 1.0f, float pitch = 1.0f)
     {
         for (int i = 0; i < soundEffects.Length; ++i)
         {
             if (soundEffects[i].name == audioClip.name)
             {
-                PlaySound(i, volume, pitch);
+                PlaySound(i, position, volume, pitch);
                 break;
             }
         }
     }
 
-    public void PlaySound(AudioClip[] audioClips, float volume = 1.0f, float pitch = 1.0f)
+    public void PlaySound(AudioClip[] audioClips, Vector3 position, float volume = 1.0f, float pitch = 1.0f)
     {
         AudioClip audioClip = audioClips[Random.Range(0, audioClips.Length)];
         if (audioClip != null)
         {
-            PlaySound(audioClip, volume, pitch);
+            PlaySound(audioClip, position, volume, pitch);
         }
     }
 
-    public void PlaySound(string clipName, float volume = 1.0f, float pitch = 1.0f)
+    public void PlaySound(string clipName, Vector3 position, float volume = 1.0f, float pitch = 1.0f)
     {
         for (int i = 0; i < soundEffects.Length; ++i)
         {
             if (soundEffects[i].name == clipName)
             {
-                PlaySound(i, volume, pitch);
+                PlaySound(i, position, volume, pitch);
                 break;
             }
         }
     }
 
-    public void PlaySound(int clipIndex, float volume = 1.0f, float pitch = 1.0f)
+    public void PlaySound(int clipIndex, Vector3 position, float volume = 1.0f, float pitch = 1.0f)
     {
         if (clipIndex >= soundEffects.Length)
         {
@@ -73,7 +79,8 @@ public class AudioManager : MonoBehaviour
 
         if (audioSource != null)
         {
-            //audioPoolObject.RemoveAt(0);
+            audioPoolObject.RemoveAt(0);
+            audioSource.transform.position = position;
             audioSource.clip = soundEffects[clipIndex];
             audioSource.volume = volume;
             audioSource.pitch = pitch;
@@ -92,4 +99,29 @@ public class AudioManager : MonoBehaviour
         audioPoolObject.Add(audioObject);
     }
 
+    public void LoadSong(int index)
+    {
+        // Load a song
+
+        if (index == 1)
+        {
+            activeSong = song_1;
+        }
+        else if (index == 2)
+        {
+            activeSong = song_2;
+        }
+        else
+        {
+            activeSong = song_3;
+        }
+
+        activeSong.fullsong.Play();
+
+    }
+
+    public void SetMusicLayer(int index, bool on)
+    {
+        musicLayers[index].mute = !on;
+    }
 }
