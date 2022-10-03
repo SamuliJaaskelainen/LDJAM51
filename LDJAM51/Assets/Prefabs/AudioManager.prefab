@@ -45,24 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffects:
-  - {fileID: 8300000, guid: 16b6747442c304b45a4a0750ee74eab7, type: 3}
-  - {fileID: 8300000, guid: 1f63368ab29a80c4097650011a59c4bb, type: 3}
-  - {fileID: 8300000, guid: f9f959ea17f85004589f64b002dc5f00, type: 3}
-  - {fileID: 8300000, guid: b1f9c91d3ee33a1478aff0aaddda3c2e, type: 3}
-  - {fileID: 8300000, guid: f27801adf1a7ccc49b360a88ca8932d2, type: 3}
-  - {fileID: 8300000, guid: bb8cc629b16af4f4088400bf15dd5922, type: 3}
-  - {fileID: 8300000, guid: 07c3416e4a342694ebfe389147a8a3ce, type: 3}
-  - {fileID: 8300000, guid: 3324fcd9984e73140b058b632213cd27, type: 3}
-  - {fileID: 8300000, guid: f95650f5955c46a4981f648186897fba, type: 3}
-  - {fileID: 8300000, guid: 5d02bb55cc032f24193fd9078fb45f9e, type: 3}
-  - {fileID: 8300000, guid: 8bd85c2924e71594286922b1d1c94182, type: 3}
+  - {fileID: 8300000, guid: 1b42b89bd92ecde4c99d45f1ad82373b, type: 3}
+  - {fileID: 8300000, guid: 16474bb928f400c409ff1aada1cdc239, type: 3}
+  - {fileID: 8300000, guid: a8e34d1a599a4334bbb13eb72e8624f6, type: 3}
+  - {fileID: 8300000, guid: 874d61e65f9536b40a92350a78e8821b, type: 3}
+  - {fileID: 8300000, guid: e6cfdc135649ad24584aad5dec4b2045, type: 3}
+  - {fileID: 8300000, guid: fefe0b93ed02bf04a87495a12699eb82, type: 3}
+  - {fileID: 8300000, guid: dc65fb601ccddb245b15998902db344f, type: 3}
+  - {fileID: 8300000, guid: 45a292024dc8599478b5e4cdb6129c37, type: 3}
   musicLayers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 8623ec13daa1bfd409927cfb68b2f75b, type: 3}
+  - {fileID: 8300000, guid: 808a2045ea743ef47b2dab5821551de3, type: 3}
+  - {fileID: 8300000, guid: c53f20c65408a4c468f09678ac636f9a, type: 3}
   audioPrefab: {fileID: 2543033851613912946, guid: 83ba3f863a01f8b4f8ee309267b1c80c,
     type: 3}
-  song_1: {fileID: 0}
-  song_2: {fileID: 0}
-  song_3: {fileID: 0}
-  activeSong: {fileID: 0}

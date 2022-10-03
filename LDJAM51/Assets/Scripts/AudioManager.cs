@@ -5,14 +5,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioClip[] soundEffects;
-    public AudioSource[] musicLayers;
+    public AudioClip[] musicLayers;
 
     public GameObject audioPrefab;
-    
-    public Song song_1;
-    public Song song_2;
-    public Song song_3;
-    public Song activeSong;
 
     List<GameObject> audioPoolObject = new List<GameObject>();
 
@@ -99,29 +94,4 @@ public class AudioManager : MonoBehaviour
         audioPoolObject.Add(audioObject);
     }
 
-    public void LoadSong(int index)
-    {
-        // Load a song
-
-        if (index == 1)
-        {
-            activeSong = song_1;
-        }
-        else if (index == 2)
-        {
-            activeSong = song_2;
-        }
-        else
-        {
-            activeSong = song_3;
-        }
-
-        activeSong.fullsong.Play();
-
-    }
-
-    public void SetMusicLayer(int index, bool on)
-    {
-        musicLayers[index].mute = !on;
-    }
 }
