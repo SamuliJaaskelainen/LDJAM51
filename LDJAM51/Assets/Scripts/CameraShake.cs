@@ -15,16 +15,19 @@ public class CameraShake : MonoBehaviour
     [Range(0.0f, 100.0f)]
     public float speed = 10.0f;
 
+    [Range(0.0f, 100.0f)]
+    public float addMultiplier = 10.0f;
+
     public NoiseSettings noiseSettings;
 
     void Awake()
     {
-        Instance      = this;
+        Instance = this;
     }
 
     public void Shake(float addIntensity = 1.0f)
     {
-        intensity += addIntensity;
+        intensity += addIntensity * addMultiplier;
     }
 
     void Update()
@@ -43,7 +46,8 @@ public class CameraShake : MonoBehaviour
         {
             // Make sure camera has a noise profile
             var component = camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-            if (component == null) {
+            if (component == null)
+            {
                 component = camera.AddCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
                 component.m_NoiseProfile = noiseSettings;
             }
