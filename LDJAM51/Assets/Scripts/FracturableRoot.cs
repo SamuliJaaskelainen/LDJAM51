@@ -47,28 +47,19 @@ public class FracturableRoot : MonoBehaviour
         {
             fracturable.BecomePhysicsFragmenst(0.5f * Random.onUnitSphere);
         }
-        switch (Random.Range(0, 7))
+        switch (Random.Range(0, 4))
         {
             case 0:
-                AudioManager.Instance.PlaySound("glassbreak01", transform.position);
+                AudioManager.Instance.PlaySound("shatter01", transform.position);
                 break;
             case 1:
-                AudioManager.Instance.PlaySound("glassbreak02", transform.position);
+                AudioManager.Instance.PlaySound("shatter02", transform.position);
                 break;
             case 2:
-                AudioManager.Instance.PlaySound("glassbreak03", transform.position);
+                AudioManager.Instance.PlaySound("shatter03", transform.position);
                 break;
             case 3:
-                AudioManager.Instance.PlaySound("glassbreak04", transform.position);
-                break;
-            case 4:
-                AudioManager.Instance.PlaySound("glassbreak05", transform.position);
-                break;
-            case 5:
-                AudioManager.Instance.PlaySound("glassbreak06", transform.position);
-                break;
-            case 6:
-                AudioManager.Instance.PlaySound("glassbreak07", transform.position);
+                AudioManager.Instance.PlaySound("shatter04", transform.position);
                 break;
         }
         Destroy(gameObject);

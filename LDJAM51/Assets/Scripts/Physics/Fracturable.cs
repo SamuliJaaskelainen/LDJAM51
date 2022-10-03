@@ -35,6 +35,21 @@ public class Fracturable : MonoBehaviour {
         }
 
         GameObject fragmentRoot = BecomeFragments();
+                switch (Random.Range(0, 4))
+        {
+            case 0:
+                AudioManager.Instance.PlaySound("fracture01", transform.position);
+                break;
+            case 1:
+                AudioManager.Instance.PlaySound("fracture02", transform.position);
+                break;
+            case 2:
+                AudioManager.Instance.PlaySound("fracture03", transform.position);
+                break;
+            case 3:
+                AudioManager.Instance.PlaySound("fracture04", transform.position);
+                break;
+        }
         UpdateChildren(fragmentRoot.transform, impactInfo);
 
         Destroy(this);
@@ -195,6 +210,7 @@ public class Fracturable : MonoBehaviour {
 
     public static void CauseFractures(Vector3 point, float radius, Vector3 impulse) {
         Collider[] colliders = Physics.OverlapSphere(point, radius);
+        
         foreach (var collider in colliders)
         {
             var fracturable = collider.GetComponent<Fracturable>();
