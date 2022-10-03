@@ -56,3 +56,6 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   shake: 0.08
   ownerId: 0
+  clips:
+  - {fileID: 8300000, guid: c2e5bf1fcf8f0e146b66be7275386b5f, type: 3}
+  - {fileID: 8300000, guid: 8642a5acc1176ec47aabf7f031c4894d, type: 3}

@@ -10,6 +10,14 @@ public class Gun : MonoBehaviour
     public Vector3[] bulletOffsets;
     public float shake = 0.08f;
     public int ownerId;
+    
+    public AudioClip[] clips;
+    public AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
 
     public virtual void Shoot(Vector3 position, Vector3 forward)
     {
@@ -24,10 +32,11 @@ public class Gun : MonoBehaviour
             {
                 bullet = Instantiate(bullets[i], null);
             }
+            
             bullet.transform.position = position;
             bullet.transform.forward = forward;
             bullet.transform.localPosition += bulletOffsets[i];
-            bullet.Init(ownerId);
+            bullet.Init(ownerId);   
 
             if (Shop.shopOpen)
             {
@@ -36,5 +45,7 @@ public class Gun : MonoBehaviour
         }
 
         CameraShake.Instance.Shake(shake);
+        audioSource.clip = clips[Random.Range(0, clips.Length)];
+        audioSource.Play();
     }
 }
