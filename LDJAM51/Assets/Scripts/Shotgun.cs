@@ -31,5 +31,7 @@ public class Shotgun : Gun
         }
 
         CameraShake.Instance.Shake(shake);
+        audioSource.clip = clips[Random.Range(0, clips.Length)];
+        audioSource.Play();
     }
 }
