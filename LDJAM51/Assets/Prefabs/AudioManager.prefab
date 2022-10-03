@@ -59,6 +59,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78dcc8427dfaf0f4f841713ebae3e062, type: 3}
   - {fileID: 8300000, guid: 143797114be4b8d4483d749c76a0ef95, type: 3}
   - {fileID: 8300000, guid: b933a8cebab28044c89aa42a46061f1a, type: 3}
+  - {fileID: 8300000, guid: ff3310f41346c8241ad9dbfba9da94fc, type: 3}
+  - {fileID: 8300000, guid: 986d54f6a2eca864d8c8ee6eb1eb8ab8, type: 3}
+  - {fileID: 8300000, guid: cd13b1582aa4c7245b3a830de029d77a, type: 3}
+  - {fileID: 8300000, guid: deea055b4f1ce42488913f13361b0f04, type: 3}
+  - {fileID: 8300000, guid: 6aab6127bc0c406438cdbad8b16c1573, type: 3}
   musicLayers:
   - {fileID: 8300000, guid: 8623ec13daa1bfd409927cfb68b2f75b, type: 3}
   - {fileID: 8300000, guid: 808a2045ea743ef47b2dab5821551de3, type: 3}

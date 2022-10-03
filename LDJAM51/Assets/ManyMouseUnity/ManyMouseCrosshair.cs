@@ -174,19 +174,19 @@ public class ManyMouseCrosshair : MonoBehaviour
             switch (UnityEngine.Random.Range(0, 5))
             {
                 case 0:
-                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
+                    AudioManager.Instance.PlaySound("noammo01", gameCamera.transform.position);
                     break;
                 case 1:
-                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
+                    AudioManager.Instance.PlaySound("noammo02", gameCamera.transform.position);
                     break;
                 case 2:
-                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
+                    AudioManager.Instance.PlaySound("noammo03", gameCamera.transform.position);
                     break;
                 case 3:
-                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
+                    AudioManager.Instance.PlaySound("noammo04", gameCamera.transform.position);
                     break;
                 case 4:
-                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
+                    AudioManager.Instance.PlaySound("noammo05", gameCamera.transform.position);
                     break;
             }
         }
