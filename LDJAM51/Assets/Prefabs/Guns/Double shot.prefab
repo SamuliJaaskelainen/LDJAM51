@@ -54,7 +54,7 @@ MonoBehaviour:
   bulletOffsets:
   - {x: -0.6, y: 0, z: 0}
   - {x: 0.6, y: 0, z: 0}
-  shake: 0.04
+  shake: 0.05
   ownerId: 0
   clips:
   - {fileID: 8300000, guid: 31d0440444e828a479370dfb11590511, type: 3}
