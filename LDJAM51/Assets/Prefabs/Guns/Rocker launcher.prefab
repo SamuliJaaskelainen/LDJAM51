@@ -55,8 +55,7 @@ MonoBehaviour:
   shake: 0.08
   ownerId: 0
   clips:
-  - {fileID: 8300000, guid: dd1f77d40268d844fb0c54c9d4acebfc, type: 3}
-  - {fileID: 8300000, guid: 176ae7d17a8848c46abd2912f970c8f4, type: 3}
-  - {fileID: 8300000, guid: 8eb3fe65518dc5a4e8677a5218a1f530, type: 3}
-  - {fileID: 8300000, guid: e1b6b270de3b8454eae5b5324b524866, type: 3}
+  - {fileID: 8300000, guid: 6e9ef26e12ff40347a4b2566f1da32e1, type: 3}
+  - {fileID: 8300000, guid: 787822966f617454f8c6ea906456b207, type: 3}
+  - {fileID: 8300000, guid: 0ac9cdd25f2e989448e5ba376e2442f0, type: 3}
   audioSource: {fileID: 0}
