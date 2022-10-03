@@ -60,7 +60,6 @@ public class Shop : MonoBehaviour
 
         if (updateTimer > 0.1f)
         {
-            Debug.Log("Update physics");
             updateTimer = 0.0f;
             Physics.SyncTransforms();
         }

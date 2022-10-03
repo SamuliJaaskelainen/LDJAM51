@@ -6690,7 +6690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891204416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.70019, y: 65.07444, z: -20.795963}
+  m_LocalPosition: {x: 78.70079, y: -19.254417, z: -34.591125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6761,6 +6761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: {fileID: 1958819589}
+  volume: {fileID: 688264547}
 --- !u!65 &1891204425
 BoxCollider:
   m_ObjectHideFlags: 0

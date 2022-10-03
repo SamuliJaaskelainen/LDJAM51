@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     {
         float dt = Shop.shopOpen ? Time.unscaledDeltaTime : Time.deltaTime;
         Vector3 nextPosition = transform.position + transform.forward * speed * dt;
-        float lenght = Mathf.Max(speed * dt, Shop.shopOpen ? 10.0f : 1.0f);
+        float lenght = Mathf.Max(speed * dt, Shop.shopOpen ? 10.0f : 0.1f);
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, lenght))
         {
