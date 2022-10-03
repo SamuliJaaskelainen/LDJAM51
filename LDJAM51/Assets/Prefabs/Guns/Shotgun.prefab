@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
   - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
   - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
+  - {fileID: 6735546056156724617, guid: c512a4a020ebb5849b8a2159c55cfadc, type: 3}
   bulletOffsets: []
   shake: 0.08
   ownerId: 0

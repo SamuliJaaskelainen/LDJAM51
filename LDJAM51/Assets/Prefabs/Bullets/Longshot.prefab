@@ -50,7 +50,7 @@ MonoBehaviour:
   bloodParticle: {fileID: 686786341235992996, guid: 04d349fa11dcaff4c99ad91509a4d47a,
     type: 3}
   speed: 55
-  radius: 0.3
+  radius: 1.5
   impulse: 0.5
   penetration: 30
 --- !u!1 &6399120765849807325
