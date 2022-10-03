@@ -63,6 +63,7 @@ MonoBehaviour:
   crosshairCanvas: {fileID: 0}
   graphics: {fileID: 3949477696096568799}
   cursorSpeed: 1
+  crosshairImage: {fileID: 8103961989605807131}
   selectionImage: {fileID: 1502873688641058794}
   defaultGun: {fileID: 308059798029136612, guid: 9e6b4a1259acdd84daf8e86f69245027,
     type: 3}

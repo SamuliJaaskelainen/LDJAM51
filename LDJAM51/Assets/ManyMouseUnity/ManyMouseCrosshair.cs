@@ -14,6 +14,7 @@ public class ManyMouseCrosshair : MonoBehaviour
     [SerializeField] CanvasScaler crosshairCanvas;
     [SerializeField] RectTransform graphics;
     [SerializeField] float cursorSpeed = 10.0f;
+    [SerializeField] UnityEngine.UI.Image crosshairImage = null;
     [SerializeField] UnityEngine.UI.Image selectionImage = null;
 
     [SerializeField] GameObject defaultGun;
@@ -108,6 +109,8 @@ public class ManyMouseCrosshair : MonoBehaviour
         {
             Debug.Log("Shoot direct mouse " + " button " + buttonId);
             player1mouseId = 0;
+            crosshairImage.color = Color.cyan;
+            selectionImage.color = Color.cyan;
         }
         else
         {
@@ -119,6 +122,8 @@ public class ManyMouseCrosshair : MonoBehaviour
                 {
                     Debug.Log("P1 assigned to mouse " + mouse.ID);
                     player1mouseId = mouse.ID;
+                    crosshairImage.color = Color.red;
+                    selectionImage.color = Color.red;
                 }
                 else if (player2mouseId < 0)
                 {
@@ -126,6 +131,8 @@ public class ManyMouseCrosshair : MonoBehaviour
                     player2mouseId = mouse.ID;
                     playerCount = 2;
                     ShootCanvasManager.Instance.SetPlayerTwo(true);
+                    crosshairImage.color = Color.cyan;
+                    selectionImage.color = Color.cyan;
                 }
             }
         }
@@ -155,7 +162,7 @@ public class ManyMouseCrosshair : MonoBehaviour
                 {
                     ShootCanvasManager.Instance.SetGunActive(1, bullet, false);
                 }
-                else
+                else if (mouse.ID == player2mouseId)
                 {
                     ShootCanvasManager.Instance.SetGunActive(2, bullet, false);
                 }
@@ -258,11 +265,11 @@ public class ManyMouseCrosshair : MonoBehaviour
                 {
                     if (mouse.ID == player1mouseId)
                     {
-                        ShootCanvasManager.Instance.SetGunActive(1, i, false);
+                        ShootCanvasManager.Instance.SetGunActive(1, i, true);
                     }
-                    else
+                    else if (mouse.ID == player2mouseId)
                     {
-                        ShootCanvasManager.Instance.SetGunActive(2, i, false);
+                        ShootCanvasManager.Instance.SetGunActive(2, i, true);
                     }
                 }
             }
@@ -328,7 +335,7 @@ public class ManyMouseCrosshair : MonoBehaviour
                 {
                     ShootCanvasManager.Instance.SetGun(1, i, guns[i].shotMesh);
                 }
-                else
+                else if (mouse.ID == player2mouseId)
                 {
                     ShootCanvasManager.Instance.SetGun(2, i, guns[i].shotMesh);
                 }

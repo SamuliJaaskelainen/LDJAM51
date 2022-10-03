@@ -43,6 +43,7 @@ public class Shop : MonoBehaviour
         p1Skip.text = "SKIP";
         p2Skip.text = "SKIP";
         p1skip = false;
+        p2skip = false;
         if (ManyMouseCrosshair.player2mouseId < 0)
         {
             Skip("2");
