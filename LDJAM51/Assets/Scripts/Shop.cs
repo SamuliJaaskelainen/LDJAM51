@@ -26,7 +26,7 @@ public class Shop : MonoBehaviour
     int p1SelectedGunCard;
     int p2SelectedGunCard;
 
-    int maxShopIndex = 3;
+    int maxShopIndex = 2;
 
     float updateTimer;
 

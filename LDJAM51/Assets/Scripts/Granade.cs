@@ -2,29 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Granade : Bullet
 {
-    public float speed;
-    public float radius = 0.4f;
-    public float impulse = -0.5f;
-    public int penetration = 1;
-    protected RaycastHit hit;
-    protected int shooterId;
-    protected int targetsHit = 0;
+    public float gravity = 1.0f;
 
-    public void Init(int id)
-    {
-        shooterId = id;
-        Destroy(gameObject, 3.0f);
-    }
-
-    public virtual void Update()
+    public override void Update()
     {
         float dt = Shop.shopOpen ? Time.unscaledDeltaTime : Time.deltaTime;
-        Vector3 nextPosition = transform.position + transform.forward * speed * dt;
-        float lenght = Mathf.Max(speed * dt, Shop.shopOpen ? 10.0f : 1.0f);
+        Vector3 nextPosition = transform.position + transform.forward * speed * dt + Vector3.down * gravity * dt;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, lenght))
+        if (Physics.Linecast(transform.position, nextPosition, out hit))
         {
             Debug.Log("Bullet hit: " + hit.transform.name, gameObject);
 

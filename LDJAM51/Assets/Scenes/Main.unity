@@ -1150,8 +1150,10 @@ MonoBehaviour:
   - {fileID: 308059798029136612, guid: 414002227a135994fa5774e1d107df61, type: 3}
   - {fileID: 308059798029136612, guid: d2fa627b0d2100e4a86b1ed114a96b39, type: 3}
   - {fileID: 308059798029136612, guid: 50a48ca2509729541b3a94b2a763f3e2, type: 3}
+  - {fileID: 308059798029136612, guid: d1cee82fd53d89044b54db01c219e5b0, type: 3}
   - {fileID: 308059798029136612, guid: c1353a9285c8a7a4c8f249b1242cd6fb, type: 3}
   - {fileID: 308059798029136612, guid: 7ae3dfe8545dc2c41a9917032e150e95, type: 3}
+  - {fileID: 308059798029136612, guid: 81472dad0f6f2534488d0f60dd6284b8, type: 3}
 --- !u!1 &246732810
 GameObject:
   m_ObjectHideFlags: 0
@@ -6778,7 +6780,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 1}
+  m_Size: {x: 2.5, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1891204426
 MonoBehaviour:
