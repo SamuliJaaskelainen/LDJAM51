@@ -33,7 +33,7 @@ public class GameStateManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(1) && !Shop.shopOpen)
             {
-                Time.timeScale = 10.0f;
+                Time.timeScale = 3.0f;
             }
             else if (Input.GetKeyUp(KeyCode.F) || Input.GetMouseButtonUp(1))
             {

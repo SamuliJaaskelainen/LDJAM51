@@ -174,19 +174,19 @@ public class ManyMouseCrosshair : MonoBehaviour
             switch (UnityEngine.Random.Range(0, 5))
             {
                 case 0:
-                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
                     break;
                 case 1:
-                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
                     break;
                 case 2:
-                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
                     break;
                 case 3:
-                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
                     break;
                 case 4:
-                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    AudioManager.Instance.PlaySound("impact01", gameCamera.transform.position);
                     break;
             }
         }
@@ -271,23 +271,27 @@ public class ManyMouseCrosshair : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 10.0f || Shop.shopOpen)
         {
-            switch (UnityEngine.Random.Range(0, 5))
+            if (!Shop.shopOpen)
             {
-                case 0:
-                    AudioManager.Instance.PlaySound("reload01", Camera.main.transform.position);
-                    break;
-                case 1:
-                    AudioManager.Instance.PlaySound("reload02", Camera.main.transform.position);
-                    break;
-                case 2:
-                    AudioManager.Instance.PlaySound("reload03", Camera.main.transform.position);
-                    break;
-                case 3:
-                    AudioManager.Instance.PlaySound("reload04", Camera.main.transform.position);
-                    break;
-                case 4:
-                    AudioManager.Instance.PlaySound("reload05", Camera.main.transform.position);
-                    break;
+                HitPoints.Instance.Refresh();
+                switch (UnityEngine.Random.Range(0, 5))
+                {
+                    case 0:
+                        AudioManager.Instance.PlaySound("reload01", gameCamera.transform.position);
+                        break;
+                    case 1:
+                        AudioManager.Instance.PlaySound("reload02", gameCamera.transform.position);
+                        break;
+                    case 2:
+                        AudioManager.Instance.PlaySound("reload03", gameCamera.transform.position);
+                        break;
+                    case 3:
+                        AudioManager.Instance.PlaySound("reload04", gameCamera.transform.position);
+                        break;
+                    case 4:
+                        AudioManager.Instance.PlaySound("reload05", gameCamera.transform.position);
+                        break;
+                }
             }
             timer = 0.0f;
             bullet = 0;

@@ -16,6 +16,7 @@ public class HitPoints : MonoBehaviour
     Vignette vignette;
 
     float damageEffectValue = 0.0f;
+    float refreshEffectValue = 0.0f;
 
     public void Awake()
     {
@@ -67,6 +68,24 @@ public class HitPoints : MonoBehaviour
             }
             chromaticAberration.intensity.value = damageEffectValue;
             vignette.intensity.value = damageEffectValue;
+            vignette.color.value = Color.red;
         }
+
+        if (refreshEffectValue > 0.0f)
+        {
+            refreshEffectValue -= Time.deltaTime * 0.4f;
+            if (refreshEffectValue < 0.0f)
+            {
+                refreshEffectValue = 0.0f;
+            }
+            chromaticAberration.intensity.value = refreshEffectValue;
+            vignette.intensity.value = refreshEffectValue;
+            vignette.color.value = Color.magenta;
+        }
+    }
+
+    public void Refresh()
+    {
+        refreshEffectValue = 0.8f;
     }
 }
