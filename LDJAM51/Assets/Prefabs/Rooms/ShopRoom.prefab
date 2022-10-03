@@ -993,7 +993,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   - m_VirtualCamera: {fileID: 3395052069743523575}
-    m_Hold: 0
+    m_Hold: 0.25
     m_Blend:
       m_Style: 6
       m_Time: 0.5

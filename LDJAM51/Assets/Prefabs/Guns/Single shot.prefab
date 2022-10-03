@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 6735546056156724617, guid: d18aa6785a826b5439fdfab16a1a09dc, type: 3}
   bulletOffsets:
   - {x: 0, y: 0, z: 0}
-  shake: 0.01
+  shake: 0.03
   ownerId: 0
   clips:
   - {fileID: 8300000, guid: 6c3138b3242a28745b45c5cd9217e7db, type: 3}
