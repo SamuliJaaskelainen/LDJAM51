@@ -169,6 +169,27 @@ public class ManyMouseCrosshair : MonoBehaviour
             }
             bullet++;
         }
+        else
+        {
+            switch (UnityEngine.Random.Range(0, 5))
+            {
+                case 0:
+                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    break;
+                case 1:
+                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    break;
+                case 2:
+                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    break;
+                case 3:
+                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    break;
+                case 4:
+                    AudioManager.Instance.PlaySound("impact01", Camera.main.transform.position);
+                    break;
+            }
+        }
 
         if (HitPoints.hitPoints <= 0)
         {
@@ -250,6 +271,24 @@ public class ManyMouseCrosshair : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 10.0f || Shop.shopOpen)
         {
+            switch (UnityEngine.Random.Range(0, 5))
+            {
+                case 0:
+                    AudioManager.Instance.PlaySound("reload01", Camera.main.transform.position);
+                    break;
+                case 1:
+                    AudioManager.Instance.PlaySound("reload02", Camera.main.transform.position);
+                    break;
+                case 2:
+                    AudioManager.Instance.PlaySound("reload03", Camera.main.transform.position);
+                    break;
+                case 3:
+                    AudioManager.Instance.PlaySound("reload04", Camera.main.transform.position);
+                    break;
+                case 4:
+                    AudioManager.Instance.PlaySound("reload05", Camera.main.transform.position);
+                    break;
+            }
             timer = 0.0f;
             bullet = 0;
             HitPoints.hitPoints = 3;
