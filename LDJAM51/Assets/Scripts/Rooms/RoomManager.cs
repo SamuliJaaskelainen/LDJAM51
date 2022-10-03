@@ -56,6 +56,8 @@ public class RoomManager : MonoBehaviour {
     public                                           int            roomsBetweenShops         = 2;
     public                                           int            roomsBetweenShopsIncrease = 1;
     public                                           int            maxRoomsBetweenShops      = 6;
+    public                                           int            pupusMurdered             = 0;
+    public                                           int            roomsSurvived             = 0;
     public                                           Room           currentRoom {get; private set;}
     private                                          Room           nextRoom;
     public                                           float          difficulty { get; private set; }
@@ -99,7 +101,8 @@ public class RoomManager : MonoBehaviour {
             nextRoom = normalRoomCollection.SpawnRoom(currentRoom.end.position, currentRoom.end.rotation, transform, difficulty);
             --roomsUntilShop;
         }
-        currentRoom.blendListCamera.enabled = true;
-        difficulty = Mathf.Min(1.0f, difficulty + 1.0f / roomsUntilMaxDifficulty);
+        currentRoom.blendListCamera.enabled =  true;
+        difficulty                          =  Mathf.Min(1.0f, difficulty + 1.0f / roomsUntilMaxDifficulty);
+        roomsSurvived                       += 1;
     }
 }

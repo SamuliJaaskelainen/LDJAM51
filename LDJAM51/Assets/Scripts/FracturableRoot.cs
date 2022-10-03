@@ -6,12 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class FracturableRoot : MonoBehaviour
 {
-    public Transform physicsFragmentRoot;
-    public FractureOptions fractureOptions;
-    public int levelsOfRecursion = 2;
-    private float massLost = 0.0f;
-    private int childrenLost = 0;
-    private bool shattered = false;
+    public  Transform       physicsFragmentRoot;
+    public  FractureOptions fractureOptions;
+    public  int             levelsOfRecursion = 2;
+    public  bool            isPupu            = false;
+    private float           massLost          = 0.0f;
+    private int             childrenLost      = 0;
+    private bool            shattered         = false;
     
     public void Start()
     {
@@ -40,6 +41,9 @@ public class FracturableRoot : MonoBehaviour
         if (shattered)
         {
             return;
+        }
+        if (isPupu) {
+            RoomManager.Instance.pupusMurdered = false;
         }
         shattered = true;
         var fracturables = gameObject.GetComponentsInChildren<Fracturable>();

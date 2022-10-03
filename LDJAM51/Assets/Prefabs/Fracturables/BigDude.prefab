@@ -60,6 +60,7 @@ MonoBehaviour:
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
   levelsOfRecursion: 2
+  isPupu: 1
 --- !u!114 &3922592792813456969
 MonoBehaviour:
   m_ObjectHideFlags: 0
