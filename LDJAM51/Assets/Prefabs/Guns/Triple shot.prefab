@@ -58,3 +58,9 @@ MonoBehaviour:
   - {x: 0, y: -0.8, z: 0}
   shake: 0.08
   ownerId: 0
+  clips:
+  - {fileID: 8300000, guid: dd1f77d40268d844fb0c54c9d4acebfc, type: 3}
+  - {fileID: 8300000, guid: 176ae7d17a8848c46abd2912f970c8f4, type: 3}
+  - {fileID: 8300000, guid: 8eb3fe65518dc5a4e8677a5218a1f530, type: 3}
+  - {fileID: 8300000, guid: e1b6b270de3b8454eae5b5324b524866, type: 3}
+  audioSource: {fileID: 0}

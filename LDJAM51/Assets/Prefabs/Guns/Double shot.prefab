@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-2503213613171649988
 MonoBehaviour:
@@ -57,5 +57,8 @@ MonoBehaviour:
   shake: 0.08
   ownerId: 0
   clips:
-  - {fileID: 8300000, guid: c2e5bf1fcf8f0e146b66be7275386b5f, type: 3}
-  - {fileID: 8300000, guid: 8642a5acc1176ec47aabf7f031c4894d, type: 3}
+  - {fileID: 8300000, guid: 31d0440444e828a479370dfb11590511, type: 3}
+  - {fileID: 8300000, guid: ddb1f78f51d59e5409cae9ea8c5c560e, type: 3}
+  - {fileID: 8300000, guid: a5480809d26d20046864031f192ab155, type: 3}
+  - {fileID: 8300000, guid: 1e1ebfadfae1ec848911da0e685157c5, type: 3}
+  audioSource: {fileID: 0}
